@@ -1,5 +1,6 @@
 <template>
 <section class="section wrapper flex-column">
+    
     <!-- width:90%;  -->
      <div class="card pa-16 " style="max-width:1440px">
          <h2 class="mb-12">Our Partners</h2>
@@ -74,7 +75,6 @@
      <div class="vector">
          <img src="~/assets/vector.svg">
      </div>
-
 </section>
   
 </template>
@@ -141,9 +141,9 @@ export default {
     }
 }
 .comment_card{
- background: #1B67C2;
-box-shadow: 2px 2px 16px 4px rgba(0, 0, 0, 0.16);
-border-radius: 24px;
+ background: #1B67C2 !important;
+box-shadow: 2px 2px 16px 4px rgba(0, 0, 0, 0.16) !important;
+border-radius: 24px !important;
 }
 .comment_text{
     max-width: 450px;
