@@ -19,12 +19,12 @@ export default {
    
     ],
     script:[
-      //   {
-      //     hid: 'tawk.to',
-      //     src:
-      //         'https://embed.tawk.to/61f043c09bd1f31184d94e9b/1fq98hb4n',
-      //     defer: true
-      // }
+        {
+          hid: 'tawk.to',
+          src:
+              'https://embed.tawk.to/61f043c09bd1f31184d94e9b/1fq98hb4n',
+          defer: true
+      }
       ]
   },
 

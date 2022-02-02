@@ -100,7 +100,7 @@ export default {
 
 <style lang="scss" scoped>
 .section{
-    margin: 90px;
+    margin: 90px 90px 0;
     position: relative;
     @media (max-width: 960px) {
         margin: 90px 20px;

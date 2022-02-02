@@ -2,14 +2,17 @@
 <v-app>
   <general-header />
   <Nuxt />
+  <GeneralFooter/>
 </v-app>
 </template>
 
 <script>
-import GeneralHeader from '../components/reusables/GeneralHeader.vue'
+import GeneralFooter from '~/components/reusables/GeneralFooter.vue'
+import GeneralHeader from '~/components/reusables/GeneralHeader.vue'
 export default {
   name: 'DefaultLayout',
-  components: { GeneralHeader },
+  components: { GeneralHeader, GeneralFooter },
+  
 
 }
 </script>

@@ -128,7 +128,7 @@ export default {
     border-radius: 20px;
     max-width: 550px;
     position: relative;
-    z-index: 99;
+    z-index: 2;
 
     h1{
     font-style: normal;

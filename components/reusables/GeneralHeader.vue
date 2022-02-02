@@ -30,22 +30,6 @@
         
       </div>
       <div class="mobile">
-        <!-- <nav role="navigation">
-          <div id="menuToggle">
-            <input type="checkbox" />
-              <span></span>
-              <span></span>
-              <span></span>
-            <ul id="menu">
-              <a href="#"><li>About Us</li></a>
-              <a href="#"><li>Business Consulting</li></a>
-              <a href="#"><li>Staff Resourcing</li></a>
-              <a href="#"><li>Project Management</li></a>
-              <a href="#"><li>Apply for jobs</li></a>
-              <a href="#"><li>Contact Us</li></a>
-          </ul>
-        </div>
-      </nav> -->
 
       <nav id="navbar" class="navigation" role="navigation">
         <input id="toggle1" type="checkbox" />
