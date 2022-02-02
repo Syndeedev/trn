@@ -6,13 +6,17 @@
       <div style="max-width:1440px" class=" px-4 centerItems">
         <h3>Delivering Beyond Expectation</h3>
       </div>
-      
     </div>
+    <PMSectionTwo/>
+    <engage-us title="Engage Us for your Projects" :bg-color="'rgba(50, 210, 50, 0.5)'"/>
   </section>
 </template>
 
 <script>
+import EngageUs from '~/components/BusinessConsulting/EngageUs.vue'
+import PMSectionTwo from '~/components/ProjectManagement/PMSectionTwo.vue'
 export default {
+  components: { EngageUs, PMSectionTwo },
 
 }
 </script>
@@ -24,7 +28,7 @@ export default {
     background-size: cover;
     height: 600px;
     background-position: center center;  
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
      h3{
           font-weight: 800;
           max-width: 700px;

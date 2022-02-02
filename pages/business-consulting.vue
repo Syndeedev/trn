@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- <similar-hero-section title="Exceeding Your Business Expectation" image="heroImage.png"/> -->
-  <section>
+  <section class="section">
     <div
       class=" d-flex align-center justify-center flex-column text-center
        hero" >
@@ -10,13 +10,22 @@
       </div>
       
     </div>
+    <section-two/>
+    <engage-us title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 255, 0.30)'"/>
+
+    <div class="vector">
+         <img src="~/assets/vectorThree.svg">
+     </div>
   </section>
   </div>
 </template>
 
 <script>
+import EngageUs from '../components/BusinessConsulting/EngageUs.vue'
+import sectionTwo from '../components/BusinessConsulting/sectionTwo.vue'
 // import similarHeroSection from '../components/reusables/similarHeroSection.vue'
 export default {
+  components: { sectionTwo, EngageUs },
 //   components: { similarHeroSection },
 
 }
@@ -50,5 +59,13 @@ export default {
     align-items: center;
     justify-items: center;
     flex-direction: column;
+}
+.section{
+  position: relative;
+}
+.vector{
+    position: absolute;
+    bottom: 20%;
+    // left: -18%;
 }
 </style>

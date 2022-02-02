@@ -8,11 +8,17 @@
       </div>
       
     </div>
+    <staff-resourcing-section-two/>
+    <engage-us title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 0, 0.5)'"/>
+
   </section>
 </template>
 
 <script>
+import EngageUs from '../components/BusinessConsulting/EngageUs.vue'
+import StaffResourcingSectionTwo from '../components/StaffResourcing/staffResourcingSectionTwo.vue'
 export default {
+  components: { EngageUs, StaffResourcingSectionTwo },
 
 }
 </script>

@@ -1,9 +1,7 @@
 <template>
-  <section class="mainDiv">
-    <div class=" wrapper hero" >
-        <h3 class="text-center">Dedicated Teams<br> For Your Dedicated Dreams</h3>
-    </div>
-    <div class="cardWrapper">
+<section class="mainDiv">
+  <div class="cardWrapper">
+      <div class="cardOneWrapper">
         <div class="card cardOne">
             <h1 class="pb-5">Who We Are</h1>
             <h3>
@@ -13,6 +11,7 @@
                 velit sem consectetur ligula, at laoreet ligula elit ac nibh. In tincidunt diam eu dictum 
                 vestibulum. Duis eros lorem, aliquam non placerat. </h3>
         </div>
+      </div>
         <div class="cardTwoWrapper">
             <div class="card cardTwo">
                 <h1 class="pb-5">What We Do</h1>
@@ -24,54 +23,25 @@
                 vestibulum. Duis eros lorem, aliquam non placerat. </h3>
             </div>
         </div>
-         <div class="card cardThree">
-            <h1 class="pb-5">How We Do It</h1>
-            <h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed venenatis nisi ante, a feugiat nunc feugiat nec. Cras feugiat 
-                fermentum libero in feugiat. Pellentesque porttitor, quam vitae interdum elementum, 
-                velit sem consectetur ligula, at laoreet ligula elit ac nibh. In tincidunt diam eu dictum 
-                vestibulum. Duis eros lorem, aliquam non placerat. </h3>
+
+        <div style="margin-top:120px" class="wrapper mb-16">
+            <h2>Our Business Consulting Services are Structured to address a company’s end-to-end 
+                business needs. We provide comprehensive services to support your business by 
+                leveraging strategy to drive people, process, information and technology considerations.</h2>
         </div>
     </div>
-    <div class="vector">
-         <img src="~/assets/vectorTwo.svg">
-     </div>
-  </section>
+    
+</section>
 </template>
 
 <script>
 export default {
+    name:"sectionTwo"
 
 }
 </script>
 
 <style lang="scss" scoped>
-
-.hero{
-    background-image: url("~/assets/heroImage.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    background-position: center center; 
-    margin: 150px auto 0;
-    
-     h3{
-          font-weight: 800;
-        font-size: 44px;
-        line-height: 60px;
-       @media (max-width: 768px) {
-           font-size: 40px;
-        line-height: 50px;
-        text-align: center;
-       }
-       @media (max-width: 320px) {
-           font-size: 30px;
-        line-height: 35px;
-        text-align: center; 
-       }
-     }
-}
 
 .cardOne{
     background: #F98C8C;
@@ -122,33 +92,10 @@ export default {
         color: #008000;
          }
 }
-.cardThree{
-    background: rgba(27, 103, 194, 0.86);
-    box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    max-width: 550px;
-    position: relative;
-    z-index: 99;
 
-    h1{
-    font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 33px;
-        color: rgba(255, 255, 255, 0.75);
-    }
-    h3{
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        color: rgba(255, 255, 255, 0.85);
-         }
-   
-}
 .cardWrapper{
     width: 80%;
-    margin: -9rem auto 0 ;
+    margin: -15rem auto 0 ;
     @media (max-width: 768px) {
         margin: -5rem auto 0 ;
         width: 95%;
@@ -157,20 +104,30 @@ export default {
 .mainDiv{
     max-width:1440px;
      margin:auto; 
-     width:90%;
-     position: relative;
-     @media (max-width: 700px) {
-        width:95%;
-       }
+    //  position: relative;
 }
-.cardTwoWrapper{
+.cardOneWrapper{
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.vector{
-    position: absolute;
-    bottom: 60px;
-    left: 25%;
+.cardTwoWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
+h2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    @media (max-width: 768px) {
+        font-size: 26px;
+            line-height: 30px;
+            text-align: left;
+        }
+    }
+
 </style>
