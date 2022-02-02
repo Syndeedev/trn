@@ -133,7 +133,7 @@ export default {
         line-height: 56px;
         color: rgba(0, 0, 0, 0.75);
         position:relative;
-        z-index: 500;
+        z-index: 2;
         margin-left: -150px;
         @media (max-width: 849px) {
             display: none;

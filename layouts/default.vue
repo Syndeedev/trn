@@ -36,6 +36,12 @@ export default {
     transform-origin: left top;
     z-index: 8;
 }
+.v-list-item .v-list-item__title{
+ color: rgba(0, 0, 0, 0.8) ;
+}
+.v-select__selection--comma{
+ color: rgba(0, 0, 0, 0.8);
+}
 // .menu{
 //   min-width: 0px !important;
     

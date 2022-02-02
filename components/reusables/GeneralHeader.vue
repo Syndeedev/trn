@@ -6,60 +6,67 @@
       <img src="~/assets/trn_logo.png" alt="trn logo">
       </div>
        
-      <div class="tabbs" >
-        <v-tabs class="" hide-slider >
-          <!-- sectionSpacing   -->
-          <v-tab to="/about" class="text-capitalize tab-title">About</v-tab>
-          <v-tab @click="openMenu()" @mouseover="openMenu()"  class="text-capitalize tab-title">
-          <div @mouseleave="closeMenu()"  class="wrapper ">
-            Services<v-icon color="#ffffff">mdi-chevron-down</v-icon>
-            <div   class="menu">
-            <v-menu
-            
-              offset-y
-              class=""
-              v-model="showMenu"
-            >
-
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-        >
-          <h2 class="dropdownText" @click="routeTo(item.route)">{{ item.title }}</h2>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+      <div class="web" >
+        <nuxt-link to="/about" class="link mr-6" exact>About</nuxt-link>
+          <div class="dropdown relative">
+              <a class="mr-6"
+                href="javascript:"
+                @mouseover="toggleDropdown"
+                >Services</a
+              >
+              <div class="dropdown-menu"
+                :class="dropdownMenuIsVisible ? 'd-flex' : 'd-none'"
+                @mouseleave="dropdownMenuIsVisible = false"
+              >
+              <nuxt-link to="/business-consulting" class="dropDownlink" exact>Business Consulting</nuxt-link>
+              <nuxt-link to="/staff-resourcing" class="dropDownlink" exact>Staff Resourcing</nuxt-link>
+              <nuxt-link to="/project-management" class="dropDownlink" exact>Project Management</nuxt-link>
+                
+              </div>
             </div>
-            
-            
-            </div></v-tab>
-          <v-tab to="/about" class="text-capitalize tab-title">Apply for jobs</v-tab>
-        </v-tabs>
+
+        <nuxt-link to="/apply" class="link mr-6" exact>Apply for jobs</nuxt-link>
         <v-btn depressed class="btn-hover"> Contact Us</v-btn>
         
       </div>
-    </div>
-
-
-
-    <!-- <div class="tw-flex  lg:tw-hidden tw-w-full tw-flex-col tw-pb-5" style="background-color: #FFFFFF">
-      <div class="tw-flex tw-flex-row tw-w-full tw-justify-between tw-p-5 " >
-        <div class="tw-flex tw-cursor-pointer lg:tw-hidden">
+      <div class="mobile">
+        <!-- <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+            <ul id="menu">
+              <a href="#"><li>About Us</li></a>
+              <a href="#"><li>Business Consulting</li></a>
+              <a href="#"><li>Staff Resourcing</li></a>
+              <a href="#"><li>Project Management</li></a>
+              <a href="#"><li>Apply for jobs</li></a>
+              <a href="#"><li>Contact Us</li></a>
+          </ul>
         </div>
-      </div>
-      <v-tabs v-if="showDropDown && $route.name !== 'Blog' && showDropDown && $route.name !== 'Post'"  class="tw-flex tw-flex-row " vertical :hide-slider="$route.name === 'LandingPage'" color="#008000">
-        <v-tab  @click="to('AboutSemicolonView')" :exact="true" class="text-capitalize tab-title">About Us</v-tab>
-        <v-tab @click="to('SwitPageView')" :exact="true" class="text-capitalize tab-title">SWiT</v-tab>
-        <v-tab @click="to('VenturesView')" :exact="true" class="text-capitalize tab-title">StartUps</v-tab>
-        <v-tab @click="to('SponsorshipPageView')" :exact="true" class="text-capitalize tab-title">Sponsorship</v-tab>
-        <v-tab @click="to('Blog')" :exact="true" class="text-capitalize tab-title tab-title-mr">Blog</v-tab>
-      </v-tabs>
+      </nav> -->
+
+      <nav id="navbar" class="navigation" role="navigation">
+        <input id="toggle1" type="checkbox" />
+        <label class="hamburger1" for="toggle1">
+          <div class="top"></div>
+          <div class="meat"></div>
+          <div class="bottom"></div>
+        </label>
       
-      <div v-if="showDropDown && $route.name === 'Blog' || showDropDown && $route.name === 'Post'" class="tw-flex tw-w-full tw-flex-col tw-px-5">
-        </div>
+        <nav class="menu1">
+          <a class="link1" href="/about">About Us</a>
+          <a class="link1" href="/business-consulting">Business Consulting</a>
+          <a class="link1" href="/staff-resourcing">Staff Resourcing</a>
+          <a class="link1" href="/project-management">Project Management</a>
+          <a class="link1" href="/apply">Apply for jobs</a>
+          <v-btn depressed class="btn-hover mt-4"> Contact Us</v-btn>
+        </nav>
+    </nav>
 
-    </div> -->
+      </div>
+    </div>
   </v-app-bar>
 
 </div>
@@ -70,33 +77,25 @@ export default {
   name: "GeneralHeader",
   data() {
     return {
-      showDropDown : false,
-      showMenu : false,
       screenWidth : window.screen.width,
-      isMobile: false,
       bg : 'transparent',
-      x: 0,
-      y: 0,
-      items: [
-        { title: 'Business Consulting', route:"/business-consulting" },
-        { title: 'Staff Resourcing', route:"/staff-resourcing"  },
-        { title: 'Project Management', route:"/project-management"  },
-      ],
+      dropdownMenuIsVisible: false,
+      mobileNavigationIsOpened: false,
+      route: this.$route.name,
+      mobileDropdownIsVisible: false,
+      windowWasScrolled: false
     };
   },
   methods: {
     routeTo(route) {
      this.$router.push(route)
     },
-    toggleShowDropDown(){
-      this.showDropDown = !this.showDropDown
-    },
     changeColor(){
       if (document.body.scrollTop > 100
       || document.documentElement.scrollTop > 100){
         this.bg = '#808080'
       }
-      else if(this.$route.name === "about"){
+      else if(this.$route.name === "about" || this.$route.name === "apply"){
         this.bg = '#808080'
       } 
       else if(document.documentElement.scrollTop < 100 && this.$route.name === "index"){
@@ -106,22 +105,18 @@ export default {
         this.bg = 'transparent'
       }
     },
-    openMenu(){
-      this.showMenu = true
+    toggleDropdown() {
+      if (this.dropdownMenuIsVisible) this.dropdownMenuIsVisible = false;
+      else if (!this.dropdownMenuIsVisible) this.dropdownMenuIsVisible = true;
     },
-    closeMenu(){
-      this.showMenu = false
+    openMobileNavigation() {
+      if (this.mobileNavigationIsOpened) this.mobileNavigationIsOpened = false;
+      else if (!this.mobileNavigationIsOpened)
+        this.mobileNavigationIsOpened = true;
     },
-    to(to){
-      // console.log(this.$route)
-      // if (this.$route.name !== to){
-        this.$router.push(to)
-      // }
-      // this.showDropDown = false
+    closeMobileNavigation() {
+      this.mobileNavigationIsOpened = false;
     },
-    // handleShowSubscribe(){
-    //     this.$root.$emit('subscribe')
-    // }
   },
   mounted() {
     window.onscroll = () =>{
@@ -135,7 +130,7 @@ export default {
     },
     $route: {
       handler: function ( newValue) {
-        if(newValue.name === "about"){
+        if(newValue.name === "about" || newValue.name === "apply"){
           this.bg = '#808080'
         }
 
@@ -147,10 +142,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.portrait.v-card {
-  margin: 0 auto;
-  max-width: 600px;
-  width: 100%;
+.link, .dropdown a{
+  text-decoration: none;
+  color: #ffffff !important;
+}
+.dropdown-menu{
+  position: absolute;
+  background: #FFFFFF;
+  flex-direction: column;
+  // width: 200px;
+  // padding: 20px;
+  
+}
+.dropDownlink{
+  color: #000000 !important;
+  margin: 6px 0;
 }
 .nav{
   max-width:1440px; 
@@ -159,9 +165,18 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.tabbs{
+.web{
   display: flex;
   align-items: center;
+  @media (max-width:768px) {
+    display: none;
+  }
+}
+.mobile{
+  display: none;
+  @media (max-width:768px) {
+    display: flex;
+  }
 }
 .image{
   padding: 10px 0 !important;
@@ -198,29 +213,6 @@ export default {
     height: auto !important;
   }
 }
-.v-tab {
-  text-transform: capitalize;
-  @media screen and (max-width: 1024px){
-    max-width: 100% ;
-    min-width: auto;
-  }
-}
-
-.v-application--is-ltr .v-tabs--align-with-title > .v-tabs-bar:not(.v-tabs-bar--show-arrows):not(.v-slide-group--is-overflowing) > .v-slide-group__wrapper > .v-tabs-bar__content > .v-tab:first-child, .v-application--is-ltr .v-tabs--align-with-title > .v-tabs-bar:not(.v-tabs-bar--show-arrows):not(.v-slide-group--is-overflowing) > .v-slide-group__wrapper > .v-tabs-bar__content > .v-tabs-slider-wrapper + .v-tab {
-  margin-left: 0 !important;
-}
-.v-slide-group__next, .v-slide-group__prev {
-  display: none;
-}
-// .v-application .text-capitalize{
-//   text-transform: capitalize !important;
-// }
-.tabbs ::v-deep .theme--light.v-tabs > .v-tabs-bar {
-  background-color: transparent;
-}
-.tabbs ::v-deep .theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active){
-  color: #ffffff;
-}
 .dropdownText {
   font-style: normal;
 font-weight: 600;
@@ -229,17 +221,104 @@ line-height: 19px;
 text-decoration: none;
 color: rgba(0, 0, 0, 0.81) !important;
 }
-.menu ::v-deep .v-list-item {
-  min-height: 40px;
-}
- .v-menu__content{
- top: 5rem !important;
-    right: 18rem !important;
-    left: unset !important;
-}
-.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled){
 
-  cursor: pointer !important;
+
+
+
+
+
+
+
+/* Hamburger */
+.hamburger1 {
+  height: 45px;
+  margin: 5px;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  z-index: 120;
 }
 
+.hamburger1 div {
+  background-color: #000000;
+  position: relative;
+  width: 35px;
+  height: 5px;
+  border-radius: 3px;
+  margin-top: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle1 {
+  display: none;
+}
+
+#toggle1:checked + .hamburger1 .top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 22.5px;
+}
+
+#toggle1:checked + .hamburger1 .meat {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+#toggle1:checked + .hamburger1 .bottom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+#toggle1:checked ~ .menu1 {
+  height: 340px;
+}
+
+
+/* Menu */
+.menu1 {
+  // width: 200px;
+  
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin-left: -13rem;
+  position: absolute;
+  width: 250px;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+  z-index: 120;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu1 a:first-child {
+  margin-top: 40px;
+}
+
+.menu1 a:last-child {
+  margin-bottom: 40px;
+}
+
+.link1 {
+  width: 100%;
+  padding: 10px 0;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.81);
+
+}
+
+.link1:hover {
+  background-color: #fff;
+  color: rgb(61, 61, 61);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 </style>
