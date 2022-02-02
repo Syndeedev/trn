@@ -1,7 +1,6 @@
 <template>
   <div>
-      <!-- <similar-hero-section title="Exceeding Your Business Expectation" image="heroImage.png"/> -->
-  <section class="section">
+     <section class="section">
     <div
       class=" d-flex align-center justify-center flex-column text-center
        hero" >
@@ -23,10 +22,8 @@
 <script>
 import EngageUs from '../components/BusinessConsulting/EngageUs.vue'
 import sectionTwo from '../components/BusinessConsulting/sectionTwo.vue'
-// import similarHeroSection from '../components/reusables/similarHeroSection.vue'
 export default {
   components: { sectionTwo, EngageUs },
-//   components: { similarHeroSection },
 
 }
 </script>
