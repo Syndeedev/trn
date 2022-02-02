@@ -30,11 +30,11 @@ export default {
 
 <style lang="scss" scoped>
 .hero{
-    background-image: url("~/assets/heroImage.png");
+    background-image: url("~/assets/business.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
-    background-position: center center;  
+    background-position: center left;  
     margin-bottom: 100px;
      h3{
           font-weight: 800;

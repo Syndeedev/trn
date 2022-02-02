@@ -3,13 +3,13 @@
   <v-app-bar flat elevate-on-scroll fixed :style="{backgroundColor: bg}" height="auto">
     <div class="nav sectionSpacing">
       <div class="image" @click="routeTo('/')">
-      <img src="~/assets/trn_logo.png" alt="trn logo">
+      <img width="60" src="~/assets/trn_logo.png" alt="trn logo">
       </div>
        
       <div class="web" >
         <nuxt-link to="/about" class="link mr-6" exact>About</nuxt-link>
           <div class="dropdown relative">
-              <a class="mr-6"
+              <a style="color: #FFFFFF; text-decoration: none;" class="mr-6"
                 href="javascript:"
                 @mouseover="toggleDropdown"
                 >Services</a
@@ -142,7 +142,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.link, .dropdown a{
+.link{
   text-decoration: none;
   color: #ffffff !important;
 }
@@ -150,13 +150,14 @@ export default {
   position: absolute;
   background: #FFFFFF;
   flex-direction: column;
-  // width: 200px;
-  // padding: 20px;
+  width: 200px;
+  padding: 20px;
   
 }
 .dropDownlink{
   color: #000000 !important;
   margin: 6px 0;
+  text-decoration: none;
 }
 .nav{
   max-width:1440px; 
