@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="vector">
-         <img src="~/assets/vectorTwo.svg">
+         <img src="~/assets/VectorTwo.svg">
      </div>
   </section>
 </template>
