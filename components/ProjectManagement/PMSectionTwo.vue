@@ -30,11 +30,11 @@
        </div>
       <div class="cardDivTwo d-flex">
         <h3 >
-        Our Business Consulting Services are Structured to address a 
-        company’s end-to-end business needs. We provide comprehensive 
-        services to support your business by leveraging strategy 
-        to drive people, process, information and technology 
-        considerations.</h3>
+        We deliver value for money by providing tailored project 
+        management services to deliver projects from concept to completion. 
+        Utilizing our high caliber project teams and cost efficient industry-leading 
+        processes, we partner with clients to realize maximum benefits on projects.
+</h3>
         
         <img width="100%" src="~/assets/teams.png">
       </div>
@@ -48,38 +48,38 @@ data(){
     return{
         cardOne:[
             {
-                title:"Planning",
+                title:"Plan ",
                 color:"#008000"
             },
             {
-                title:"Prioritization",
+                title:"Execute",
                 color:"#F98C8C"
             },
             {
-                title:"Performance",
+                title:"Monitor",
                 color:"#3B7CCB"
             },
 
         ],
         cardTwo:[
             {
-                title:"Increased Customers",
+                title:"Reduced cost",
                 color:"#008000"
             },
             {
-                title:"Increased Revenue",
+                title:"On-time quality delivery",
                 color:"#F98C8C"
             },
             {
-                title:"Increased Profit",
+                title:"Effective resource allocation",
                 color:"#3B7CCB"
             },
             {
-                title:"Processed Optimization",
+                title:"Mitigated risks",
                 color:"#000000"
             },
             {
-                title:"Reduced Overhead",
+                title:"Controlled quality",
                 color:"#008000"
             },
 

@@ -33,10 +33,12 @@
             <img src="~/assets/SRImageThree.png">
           </div>
           <div class="text wrapper">
-            <h3>Our Business Consulting Services are Structured to address a 
-              company’s end-to-end business needs. We provide comprehensive 
-              services to support your business by leveraging strategy to drive
-               people, process, information and technology considerations.</h3>
+            <h3>We assess, identify and attend to the staffing
+               needs of organizations taking close consideration 
+               to the organization’s culture and specifications. 
+               Imagine you hiring that person that you could work for, 
+               we ensure that you get the right person that integrates 
+               seamlessly into your culture and performs beyond your expectation.</h3>
           </div>
 
       </div>
@@ -53,38 +55,38 @@ data(){
   return{
     cardOne:[
             {
-                title:"Enterprise",
+                title:"Identify",
                 color:"#008000"
             },
             {
-                title:"Entrepreneurship",
+                title:"Initiate",
                 color:"#FFFFFF"
             },
             {
-                title:"Employability",
+                title:"Integrate",
                 color:"#3B7CCB"
             },
 
         ],
         cardTwo:[
             {
-                title:"Increased Customers",
+                title:"Reduced cost",
                 color:"#008000"
             },
             {
-                title:"Increased Revenue",
+                title:"Improved organizational culture",
                 color:"#F98C8C"
             },
             {
-                title:"Increased Profit",
+                title:"Organizational growth",
                 color:"#3B7CCB"
             },
             {
-                title:"Processed Optimization",
+                title:"Maximized productivity",
                 color:"#000000"
             },
             {
-                title:"Reduced Overhead",
+                title:"Increased employee retention",
                 color:"#008000"
             },
 
