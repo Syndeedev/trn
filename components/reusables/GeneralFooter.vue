@@ -32,6 +32,12 @@
           </div>
         </v-col>
       </v-row>
+        <div class="wrapper mt-16">
+          <a href=""><img class="mx-4" src="~/assets/socialIcons/facebook.svg" alt="facebook"></a>
+          <a href=" https://twitter.com/trnconsulting"><img class="mx-4" src="~/assets/socialIcons/twitter.svg" alt="twitter"></a>
+          <a href="https://www.linkedin.com/company/trnconsultingservices/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/linkedin.png" alt="linkedin"></a>
+          <a href="https://www.instagram.com/trn.consulting/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/instagram.png" alt="instagram"></a>
+        </div>
       </div>
   </section>
 </template>
