@@ -22,7 +22,8 @@ export default {
         {
           hid: 'tawk.to',
           src:
-              'https://embed.tawk.to/61f043c09bd1f31184d94e9b/1fq98hb4n',
+              'https://embed.tawk.to/61fe6366b9e4e21181bd994b/1fr4r8iac',
+              
           defer: true
       }
       ]

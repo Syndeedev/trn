@@ -53,15 +53,15 @@ data(){
   return{
     cardOne:[
             {
-                title:"Identify",
+                title:"Enterprise",
                 color:"#008000"
             },
             {
-                title:"Investigate",
+                title:"Entrepreneurship",
                 color:"#FFFFFF"
             },
             {
-                title:"Integrate",
+                title:"Employability",
                 color:"#3B7CCB"
             },
 

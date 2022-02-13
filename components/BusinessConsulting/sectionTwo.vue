@@ -25,9 +25,11 @@
         </div>
 
         <div style="margin-top:120px" class="wrapper mb-16">
-            <h2>Our Business Consulting Services are Structured to address a company’s end-to-end 
-                business needs. We provide comprehensive services to support your business by 
-                leveraging strategy to drive people, process, information and technology considerations.</h2>
+            <h2>Our Business Consulting Services are structured to address a company’s 
+                end-to-end business needs. We provide comprehensive services to support your
+                 business by leveraging strategy to drive people, process, information and
+                  technology considerations.
+</h2>
         </div>
     </div>
     

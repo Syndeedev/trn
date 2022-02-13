@@ -9,7 +9,7 @@
       
     </div>
     <staff-resourcing-section-two/>
-    <engage-us title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 0, 0.5)'"/>
+    <engage-us component-name="StaffResourcing" title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 0, 0.5)'"/>
 
   </section>
 </template>

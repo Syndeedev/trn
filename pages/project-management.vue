@@ -8,7 +8,7 @@
       </div>
     </div>
     <PMSectionTwo/>
-    <engage-us title="Engage Us for your Projects" :bg-color="'rgba(50, 210, 50, 0.5)'"/>
+    <engage-us component-name="ProjectManagement" title="Engage Us for your Projects" :bg-color="'rgba(50, 210, 50, 0.5)'"/>
   </section>
 </template>
 

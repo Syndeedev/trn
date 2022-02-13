@@ -13,7 +13,12 @@
           <div class="back">
               <div class="inner">  
                    <h1>Strategy</h1>                 
-                <h4>Lorem ipsum dolor sit amet, consectet ur adipisicing elit. Explicabo quas unde dignissimos recusandae cupiditate id quis autem ea optio beatae.</h4><br>
+                <h4>We want to help develop solid strategies that have been
+                     validated and tested for accuracy. Our strategy would help make good of 
+                     your investment decisions, like how and where you should spend your money. 
+                     We would provide guidance on project prioritization and other activities 
+                     within your organization. Allocating and optimizing resources, and helping 
+                     you achieve profits and business growth.</h4><br>
                 
               </div>
           </div>
@@ -30,7 +35,13 @@
           <div class="back_card_two">
             <div class="inner">
                  <h1>People</h1>
-                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quas unde dignissimos recusandae cupiditate id quis autem ea optio beatae.</h4><br>
+                <h4> Successful businesses focus on people. Prioritizing employee development 
+                    ensures that team members’ skills continue to evolve in accordance with 
+                    industry trends and best practices. We help to make  
+                    learning and development a focus of your company culture, 
+                    improve employee engagement, increase retention and attract 
+                    elite candidates. We know strategy needs people to drive its 
+                    implementation and that's why we focus on people.</h4><br>
                 
             </div>
           </div>
@@ -46,7 +57,12 @@
           <div class="back_card_three">
             <div class="inner">
                  <h1>Technology</h1>
-                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quas unde dignissimos recusandae cupiditate id quis autem ea optio beatae.</h4><br>
+                <h4>Technology solutions allow businesses to remain agile and quick to 
+                    respond to change within the markets. Integration of various tech leads 
+                    to increased collaboration among teams leading to better product 
+                    development. With faster product launches, better quality innovations, 
+                    and improved product features, we will drive your business growth exponentially.
+                    </h4><br>
                 
             </div>
           </div>
@@ -86,16 +102,16 @@ export default {
     // padding: 1rem;
 }
 .column{
-    width: calc(25%); 
+    width: calc(30%); 
     margin: 1rem;
     cursor: pointer;
     @media screen and (max-width:68rem) {
-        width: calc(33.333333% - 4rem);
+        width: calc(33.333333% - 2.5rem);
     }
-    @media screen and (max-width:52rem) {
+    @media screen and (max-width:60rem) {
             width: calc(45% - 2rem);
     }
-    @media  (max-width:38rem) {
+    @media  (max-width:41rem) {
             width: 80%;
     }
 }
@@ -114,10 +130,26 @@ export default {
     transition: transform .7s cubic-bezier(.4, .2, .2, 1) ;
     backface-visibility: hidden;
     text-align: center;
-    min-height: 330px;
-    height: auto;
+    min-height: 470px;
+   height: auto;
     border-radius: 10px;
     font-size: 1rem;
+
+    // @media screen and (max-width:41rem) {
+    //    min-height: 600px;
+    // }
+    @media screen and (max-width:656px) {
+       min-height: 400px;
+    }
+    @media screen and (max-width:520px) {
+       min-height: 450px;
+    }
+    @media screen and (max-width:350px) {
+       min-height: 580px;
+    }
+    @media screen and (max-width:280px) {
+       min-height: 610px;
+    }
 }
 .back{
      background-image: url("~/assets/strategy.png");  

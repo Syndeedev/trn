@@ -12,7 +12,7 @@
               <a style="color: #FFFFFF; text-decoration: none;" class="mr-6"
                 href="javascript:"
                 @mouseover="toggleDropdown"
-                >Services</a
+                >Services <span style="font-size: 10px"> &#9660;</span></a
               >
               <div class="dropdown-menu"
                 :class="dropdownMenuIsVisible ? 'd-flex' : 'd-none'"
@@ -26,7 +26,8 @@
             </div>
 
         <nuxt-link to="/apply" class="link mr-6" exact>Apply for jobs</nuxt-link>
-        <v-btn depressed class="btn-hover"> Contact Us</v-btn>
+        <!-- <v-btn depressed class="btn-hover"> Contact Us</v-btn> -->
+        <contact-us/>
         
       </div>
       <div class="mobile">
@@ -57,7 +58,9 @@
 </template>
 
 <script>
+import contactUs from './contactUs.vue';
 export default {
+  components: { contactUs },
   name: "GeneralHeader",
   data() {
     return {

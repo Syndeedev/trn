@@ -8,10 +8,11 @@
                     <h2>Business Consulting</h2>
                     <div class="sub">
                         <h3 class="pt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed venenatis nisi ante, a feugiat nunc feugiat nec.
-                        Cras feugiat fermentum libero in feugiat. Pellentesque porttitor, 
-                        quam vitae interdum elementum, <span class="pl-4">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></span>
+                        As professional advisors, we help companies to achieve their goals and 
+                        streamline their operations in different areas including sales, IT,
+                         finance, marketing, supply chain management, HR, operations,
+                          engineering, and security. <br>
+                          <span class="pl-4"><a href="/business-consulting">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></a></span>
                         </h3>
                     </div>
                 </div>
@@ -24,10 +25,11 @@
                     <h2>Staff Resourcing</h2>
                     <div class="sub">
                         <h3 class="pt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed venenatis nisi ante, a feugiat nunc feugiat nec.
-                        Cras feugiat fermentum libero in feugiat. Pellentesque porttitor, 
-                        quam vitae interdum elementum, <span class="pl-4">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></span>
+                        Recruiting top talent takes a combination of creativity and diligence.
+                         Our recruiting strategy ensures we successfully help you identify,
+                          attract and hire the best candidates for your open roles. We help you
+                           identify people that transform your business. <br>
+                           <span class="pl-4"><a href="/staff-resourcing">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></a></span>
                         </h3>
                     </div>
                 </div>
@@ -43,10 +45,15 @@
                     <h2>Project Management</h2>
                     <div class="sub">
                         <h3 class="pt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed venenatis nisi ante, a feugiat nunc feugiat nec.
-                        Cras feugiat fermentum libero in feugiat. Pellentesque porttitor, 
-                        quam vitae interdum elementum, <span class="pl-4">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></span>
+                        We help you develop sustainable plans, execute and complete projects 
+                        on time with top quality. We specify the project's goal and objectives,
+                         how they will be achieved, identifying tasks and quantifying the
+                          resources needed, and determining budgets and timelines for completion.
+                           We also help in implementing the project plan, along with operating
+                            regular controls to ensure that there is accurate and objective
+                             information on performance relative to the plan, and the mechanisms
+                              to implement recovery actions where necessary.<br>
+                              <span class="pl-4"><a href="/project-management">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></a></span>
                         </h3>
                     </div>
                 </div>
@@ -54,15 +61,15 @@
             </v-col>
             
             <v-col  cols="12" sm="12" md="6">
-                <div class="columnn px-4 pb-4">
+                <div class="columnn colFour px-4 pb-4">
                 <div class="services wrapper flex-column">
                     <h2>Why trn Consulting </h2>
                     <div class="sub">
                         <h3 class="pt-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed venenatis nisi ante, a feugiat nunc feugiat nec.
-                        Cras feugiat fermentum libero in feugiat. Pellentesque porttitor, 
-                        quam vitae interdum elementum, <span class="pl-4">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></span>
+                        Our priority is to help you create a sustainable business.
+                         We help you focus on the big dream you have and make it a reality.<br>
+                       <br>
+                        <span class="pl-4"><a href="/about">Read more<v-icon class="mt-n1 pl-1" color="#008000" size="15">mdi-arrow-right</v-icon></a></span>
                         </h3>
                     </div>
                 </div>
@@ -89,8 +96,8 @@ export default {
 }
 .columnn{
     background-image: url("~/assets/heroImage.png");
-    // background-repeat: no-repeat;
-    // background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     // height: 600px;
     // background-position: center center;  
     padding-top: 120px;
@@ -114,6 +121,7 @@ export default {
         font-size: 13px;
         line-height: 24px;
         color: rgba(0, 0, 0, 0.73);
+        padding: 0 10px;
     }
     span{
         font-style: normal;
@@ -121,11 +129,17 @@ export default {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.08em;
-        color: #008000;
         text-transform: uppercase;
+        a{
+            color: #008000;
+            text-decoration: none;
+        }
     }
 }
 .sub{
     max-width: 440px;
+}
+.colFour{
+    min-height: 400px;
 }
 </style>

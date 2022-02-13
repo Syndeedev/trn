@@ -7,31 +7,54 @@
         <div class="card cardOne">
             <h1 class="pb-5">Who We Are</h1>
             <h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed venenatis nisi ante, a feugiat nunc feugiat nec. Cras feugiat 
-                fermentum libero in feugiat. Pellentesque porttitor, quam vitae interdum elementum, 
-                velit sem consectetur ligula, at laoreet ligula elit ac nibh. In tincidunt diam eu dictum 
-                vestibulum. Duis eros lorem, aliquam non placerat. </h3>
+                TRN is a business consulting organization with expertise in General Business 
+                Advisory, Staff Resourcing and Project Management. We are the preferred and 
+                trusted advisory partner for numerous clients spread across Nigeria.
+                <br><br>
+
+                We are resolved to provide tailor-made solutions to the specific needs of our clients.
+                Our team offers a formidable range of expertise and experience. We strongly believe in having
+                constant dialogue with our clients to comprehend their requirements and offer innovative 
+                customized solutions. Our pledge to augment our team has helped us in assuring high standards 
+                of quality to build a dependable association with our clients.<br><br>
+
+                Our team consists of experienced, energetic, professionally focused team of business analysts,
+                business developers, Human Resource Managers, certified accountants, chartered accountants, 
+                Attorneys, MBAs, Project Managers and CFAs who are dedicated to consistently providing
+                efficient services.
+
+             </h3>
         </div>
         <div class="cardTwoWrapper">
             <div class="card cardTwo">
-                <h1 class="pb-5">What We Do</h1>
+                <h1 class="pb-5">How We Help</h1>
                 <h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed venenatis nisi ante, a feugiat nunc feugiat nec. Cras feugiat 
-                fermentum libero in feugiat. Pellentesque porttitor, quam vitae interdum elementum, 
-                velit sem consectetur ligula, at laoreet ligula elit ac nibh. In tincidunt diam eu dictum 
-                vestibulum. Duis eros lorem, aliquam non placerat. </h3>
+                We remove the pressure for clients by unlocking their business &
+                 brand challenges with tailor-made solutions so you can make the tricky
+                  decisions quickly. 
+                   
+                    </h3>
+                    <ul>
+                        <li>- Making complex simple</li>
+                        <li>- Rapid turnaround & decision making</li>
+                        <li>- Support to make it happen</li>
+                    </ul>
             </div>
         </div>
          <div class="card cardThree">
-            <h1 class="pb-5">How We Do It</h1>
-            <h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed venenatis nisi ante, a feugiat nunc feugiat nec. Cras feugiat 
-                fermentum libero in feugiat. Pellentesque porttitor, quam vitae interdum elementum, 
-                velit sem consectetur ligula, at laoreet ligula elit ac nibh. In tincidunt diam eu dictum 
-                vestibulum. Duis eros lorem, aliquam non placerat. </h3>
+            <h1 class="pb-5">How We Work With You</h1>
+            <h3>-          We bring new ideas and unique perspectives by blending business 
+                and technology expertise with creativity, logic, and an understanding of your
+                 business.<br><br>
+-          We create custom solutions based on client need, industry and desired outcome.<br><br>
+-          We offer local delivery with firm-wide support, working with you to deliver at the
+ “Right Site” whether on-site at your office, off-site at ours, offshore, or a 
+ combination of these.<br><br>
+-          We offer role-based consulting, complete project or workstream delivery for large
+ projects. No matter what your need, we have the experts – enterprise program management
+  professionals, project managers, business analysts, scrum masters, and application developers.<br><br>
+
+                 </h3>
         </div>
     </div>
     <div class="vector">
@@ -79,7 +102,7 @@ export default {
     max-width: 550px;
 }
 .card{
-    height: 322px;
+    height: auto;
     border-radius: 20px;
     padding: 40px;
     margin-top: -40px;
@@ -120,6 +143,15 @@ export default {
         font-size: 16px;
         line-height: 24px;
         color: #008000;
+         }
+         li{
+             color: rgba(0, 128, 0, 0.75);
+         }
+         ul{
+             list-style: none;
+             padding-left: 0;
+             padding-bottom: 20px;
+             padding-top: 10px;
          }
 }
 .cardThree{
@@ -173,4 +205,5 @@ export default {
     bottom: 60px;
     left: 25%;
 }
+
 </style>

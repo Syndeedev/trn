@@ -51,5 +51,13 @@ export default {
 //     transform-origin: right top !important;
 //     z-index: 8;
 // }
-
+.v-text-field.v-text-field--solo .v-input__control{
+  min-height: 35px;
+}
+.v-text-field.v-text-field--enclosed .v-text-field__details{
+  margin-bottom: 0;
+}
+.v-input__slot{
+  margin-bottom: 0;
+}
 </style>

@@ -6,32 +6,35 @@
          <h2 class="mb-12">Our Partners</h2>
             <div class="imagesCard d-flex justify-space-around flex-wrap align-items">
                 <div class="image">
-                <img src="~/assets/partnerImages/google.svg">
+                <img width="141" height="120" src="~/assets/TrnPartnerImages/Amazon-Logo.png">
                 </div>
                 <div class="image">
-                <img src="~/assets/partnerImages/azure.svg">
+                <img width="170" height="150" src="~/assets/TrnPartnerImages/Microsoft_Logo.png">
                 </div>
                 <div class="image">
-                <img src="~/assets/partnerImages/oracle.svg">
+                <img width="150" height="150" src="~/assets/TrnPartnerImages/eyeconic.jpeg">
+                </div>
+                <div  class="image">
+                <img width="150" height="150" src="~/assets/TrnPartnerImages/fcm.jpeg">
                 </div>
                 <div class="image">
-                <img src="~/assets/partnerImages/sage.svg">
-                </div>
-                <div class="image">
-                <img src="~/assets/partnerImages/sap.svg">
+                <img width="170" height="150" src="~/assets/TrnPartnerImages/dynastees.jpeg">
                 </div>
             </div>
 
 
             <div class="imagesCard d-flex justify-space-around flex-wrap align-items">
             <div class="image">
-                <img src="~/assets/partnerImages/connectWise.svg">
+                <img width="150" height="150" src="~/assets/TrnPartnerImages/yellow-blue.png">
                 </div>
                 <div class="image">
-                <img src="~/assets/partnerImages/redhat.svg">
+                <img width="170" height="140" src="~/assets/TrnPartnerImages/whoosh.jpeg">
                 </div>
                 <div class="image">
-                <img src="~/assets/partnerImages/slack.svg">
+                <img width="150" height="150" src="~/assets/TrnPartnerImages/speck.jpeg">
+                </div>
+                <div class="image">
+                <img width="150" height="110" src="~/assets/TrnPartnerImages/tbt.jpeg">
                 </div>
             
             </div>
@@ -123,7 +126,7 @@ export default {
     }
 }
 .image{
-    padding: 16px;
+    padding: 10px;
 }
 .comments{
     h1{

@@ -5,12 +5,13 @@
             <v-col  class="wrapper px-4" cols="12" sm="12" md="6">
                 <div  class="column_one">
                     <h2 >
-                        Being one of the most trusted consulting firms in Nigeria, we provide customized 
-                        solutions and services to help businesses across Industries and geographies to be successful. 
-                        We focus on delivering actionable and timely results to solve our client’s core issues and to
-                         grow and lead. From business strategies, hiring talent, project management, 
-                         we help companies understand markets, expand operations, start-up new businesses 
-                         and compete more effectively.
+                         Being one of the most trusted consulting firms in Nigeria, we provide
+                         customized solutions and services to help businesses across industries 
+                         and geographies to be successful. We focus on delivering actionable and
+                          timely results to solve our clients’ core issues and to enable them to 
+                          grow and lead. From business strategies, hiring talent, project 
+                          management, we help companies understand markets, expand operations, 
+                          start-up new businesses and compete more effectively.
                     </h2>
                     
                 </div>

@@ -10,11 +10,11 @@
       
     </div>
     <section-two/>
-    <engage-us title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 255, 0.30)'"/>
+    <engage-us component-name="BusinessConsulting" title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 255, 0.30)'"/>
 
-    <div class="vector">
+    <!-- <div class="vector">
          <img src="~/assets/vectorThree.svg">
-     </div>
+     </div> -->
   </section>
   </div>
 </template>
