@@ -3,7 +3,7 @@
         <div style="width:90%; max-width:1440px">
         <v-row>
             <v-col cols="12" sm="12" md="6">
-                <div class="columnn px-4 pb-4">
+                <div class="columnn colOne px-4 pb-4">
                 <div class="services wrapper flex-column">
                     <h2>Business Consulting</h2>
                     <div class="sub">
@@ -20,7 +20,7 @@
             </v-col>
             
             <v-col  cols="12" sm="12" md="6">
-                <div class="columnn px-4 pb-4">
+                <div class="columnn colTwo px-4 pb-4">
                 <div class="services wrapper flex-column">
                     <h2>Staff Resourcing</h2>
                     <div class="sub">
@@ -40,7 +40,7 @@
         
         <v-row>
             <v-col  cols="12" sm="12" md="6">
-                <div class="columnn px-4 pb-4">
+                <div class="columnn colThree px-4 pb-4">
                 <div class="services wrapper flex-column">
                     <h2>Project Management</h2>
                     <div class="sub">
@@ -95,9 +95,9 @@ export default {
     }
 }
 .columnn{
-    background-image: url("~/assets/heroImage.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url("~/assets/heroImage.png");
+    // background-repeat: no-repeat;
+    // background-size: cover;
     // height: 600px;
     // background-position: center center;  
     padding-top: 120px;
@@ -139,7 +139,26 @@ export default {
 .sub{
     max-width: 440px;
 }
+.colOne{
+background-image: url("~/assets/businessC.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.colTwo{
+    background-image: url("~/assets/staffR.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.colThree{
+ background-image: url("~/assets/projectM.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .colFour{
-    min-height: 400px;
+     background-image: url("~/assets/whytrn.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // min-height: 400px;
+    height: 100%;
 }
 </style>
