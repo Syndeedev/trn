@@ -219,8 +219,8 @@ export default {
 h2{
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 22px;
+    line-height: 33px;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
     @media (max-width: 768px) {
