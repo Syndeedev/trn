@@ -62,7 +62,7 @@
             
             <v-col  cols="12" sm="12" md="6">
                 <div class="columnn colFour px-4 pb-4">
-                <div class="services wrapper flex-column">
+                <div class="services colFourInner wrapper flex-column">
                     <h2>Why trn Consulting </h2>
                     <div class="sub">
                         <h3 class="pt-4">
@@ -160,5 +160,9 @@ background-image: url("~/assets/businessC.png");
     background-size: cover;
     // min-height: 400px;
     height: 100%;
+}
+.colFourInner{
+    height: 100%;
+    // justify-content: start;
 }
 </style>
