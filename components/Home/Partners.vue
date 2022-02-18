@@ -9,7 +9,7 @@
                 <img width="150" height="100" src="~/assets/TrnPartnerImages/Amazon-Logo.png">
                 </div>
                 <div class="image">
-                <img width="150" height="100" src="~/assets/TrnPartnerImages/Microsoft_Logo.png">
+                <img width="170" height="100" src="~/assets/TrnPartnerImages/Microsoft_Logo.png">
                 </div>
                 <div class="image">
                 <img width="150" height="90" src="~/assets/TrnPartnerImages/eyeconic.jpeg">
@@ -28,7 +28,7 @@
                 <img width="120" height="120" src="~/assets/TrnPartnerImages/yellow-blue.png">
                 </div>
                 <div class="image">
-                <img width="150" height="110" src="~/assets/TrnPartnerImages/whoosh.jpeg">
+                <img width="200" height="110" src="~/assets/TrnPartnerImages/whoosh.jpeg">
                 </div>
                 <div class="image">
                 <img width="150" height="150" src="~/assets/TrnPartnerImages/speck.jpeg">
@@ -106,7 +106,12 @@
                                {{client.comment}}
                             </h3>
                             <div class="d-flex mt-7 mb-4 align-items">
-                            <v-avatar color="#343434" size="26"></v-avatar>
+                            <v-avatar color="#343434" size="30">
+                                <img
+                                    src="~/assets/avatar.jpeg"
+                                    alt="John"
+      >
+                            </v-avatar>
                             <h4 class="pl-3">{{client.name}}</h4>
                             </div>
                         </div>
