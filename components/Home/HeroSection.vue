@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero{
-    background-image: url("~/assets/womanHero.png");
+    background-image: url("~/assets/womanHero-min.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;

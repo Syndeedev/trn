@@ -165,7 +165,7 @@ h1{
     line-height: 44px;
     color: #FFFFFF;
     text-align: center;
-    @media (min-width: 700px) {
+    @media (max-width: 700px) {
     font-size: 24px;
     }
 
