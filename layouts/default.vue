@@ -60,4 +60,16 @@ export default {
 .v-input__slot{
   margin-bottom: 0;
 }
+.v-responsive__content {
+    align-items: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    // flex: 1 0 0px;
+    max-width: 100%;
+}
+.v-responsive{
+  align-items: center !important;
+    display: flex !important;
+    justify-content: center !important;
+}
 </style>

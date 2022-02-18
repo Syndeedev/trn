@@ -49,6 +49,9 @@ export default {
     font-weight: bold;
     font-size: 20px;
     line-height: 30px;
+    @media (max-width:300px) {
+        margin: 0 30px !important;
+    }
     }
 }
 .column_two{
