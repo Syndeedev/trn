@@ -5,137 +5,272 @@
           <div class="inner">
             <h3 class="text-center">{{title}}</h3>
             <div v-if="showForm && componentName === 'ProjectManagement'" class="formCard">
-              <form class="projectManagementForm" > 
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Name</h2>
-                            <v-text-field v-model="formData.name" solo ></v-text-field>
+                 <validation-observer ref="observer" v-slot="{handleSubmit}">
+                      <v-form class="tw-mt-6 projectManagementForm" @submit.prevent="handleSubmit(projectManagementSubmit)">
+                          <validation-provider
+                            v-slot="{ errors }"
+                            name="name"
+                            rules="required">
+                                <div class="d-flex field align-items justify-center">
+                                    <h2 class="mt-2">Name</h2>
+                                    <v-text-field v-model="projectManagement.name" solo ></v-text-field>
+                                </div>
+                                <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                            </validation-provider>
 
-                        </div>
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Company’s Name</h2>
-                            <v-text-field v-model="formData.companyName" solo ></v-text-field>
-                        </div>
+                        <validation-provider
+                            v-slot="{ errors }"
+                            name="company's name"
+                            rules="required">
+                                <div class="d-flex field align-items justify-center">
+                                    <h2 >Company’s Name</h2>
+                                    <v-text-field v-model="projectManagement.companyName"
+                                    solo
+                                    ></v-text-field>
+                                </div>
+                                <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                            </validation-provider>
+                        <validation-provider
+                            v-slot="{ errors }"
+                            name="industry"
+                            rules="">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Industry</h2>
+                                <v-select
+                                v-model="projectManagement.industry" 
+                                solo 
+                                :items="highestDegree"></v-select>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
 
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Industry</h2>
-                            <v-select
-                            v-model="formData.industry" 
-                            solo 
-                            :items="highestDegree"></v-select>
-                        </div>
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Project Name</h2>
-                            <v-text-field v-model="formData.projectName" solo ></v-text-field>
-                        </div>
+                         <validation-provider
+                            v-slot="{ errors }"
+                            name="project_name"
+                            rules="">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Project Name</h2>
+                                <v-text-field v-model="projectManagement.projectName" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
                         
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Project Brief</h2>
-                            <v-text-field v-model="formData.projectBrief" solo ></v-text-field>
-                        </div>
+                         <validation-provider
+                            v-slot="{ errors }"
+                            name="project_brief"
+                            rules="">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Project Brief</h2>
+                                <v-text-field v-model="projectManagement.projectBrief" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
                         
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Project Start Date</h2>
-                            <v-text-field v-model="formData.projectStartDate" solo ></v-text-field>
-                        </div>
+                        <validation-provider
+                            v-slot="{ errors }"
+                            name="project start date"
+                            rules="">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Project Start Date</h2>
+                                <v-text-field type="date" v-model="projectManagement.projectStartDate" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
                         
-                        <div class="d-flex field align-items justify-center">
-                            <h2 class="mt-2">Project End Date</h2>
-                            <v-text-field v-model="formData.projectEndDate" solo ></v-text-field>
-                        </div>
+                         <validation-provider
+                            v-slot="{ errors }"
+                            name="project end date"
+                            rules="">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Project End Date</h2>
+                                <v-text-field type="date" v-model="projectManagement.projectEndDate" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
                         
-                        <v-btn depressed block class="btn-hover mt-6"> Submit</v-btn>
-                    </form>
+                        
+                        <v-btn depressed block type="submit" class="btn-hover mt-6" > Submit</v-btn>
+                      </v-form>
+                 </validation-observer>
                 
             </div>
             <div v-if="showForm && componentName === 'BusinessConsulting'" class="formCard">
-                  <form class="businessConsultingForm" > 
+              <validation-observer ref="observer" v-slot="{handleSubmit}">
+                 <v-form class="tw-mt-6 businessConsultingForm" @submit.prevent="handleSubmit(businessConsultingSubmit)">
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="name"
+                          rules="required">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Name</h2>
-                                <v-text-field v-model="formData.name" solo ></v-text-field>
+                                <v-text-field v-model="businessConsulting.name" solo ></v-text-field>
 
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="company's name"
+                          rules="required">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Company’s Name</h2>
-                                <v-text-field v-model="formData.companyName" solo ></v-text-field>
+                                <v-text-field v-model="businessConsulting.companyName" solo ></v-text-field>
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="email"
+                          rules="required|email">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Email Address</h2>
-                                <v-text-field v-model="formData.email" solo ></v-text-field>
+                                <v-text-field v-model="businessConsulting.email" solo ></v-text-field>
                             </div>
-
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="industry"
+                          rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Industry</h2>
                                 <v-select
-                                v-model="formData.industry" 
+                                v-model="businessConsulting.industry" 
                                 solo 
                                 :items="highestDegree"></v-select>
                             </div>
-                            
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="position"
+                          rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Position</h2>
-                                <v-text-field v-model="formData.position" solo ></v-text-field>
+                                <v-text-field v-model="businessConsulting.position" solo ></v-text-field>
                             </div>
-                            
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="position"
+                          rules="">
                             <div class="d-flex flex-column field align-items justify-center">
-                                <h2 class="my-3">Business Improvement Needs</h2>
-                                <v-textarea v-model="formData.bizImprovementNeeds" solo ></v-textarea>
+                                <h2 class="mb-3">Business Improvement Needs</h2>
+                                <v-textarea v-model="businessConsulting.bizImprovementNeeds" solo ></v-textarea>
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
                             
-                            <v-btn depressed block class="btn-hover mt-6"> Submit</v-btn>
-                        </form>
+                            <v-btn depressed block class="btn-hover mt-6" type="submit"> Submit</v-btn>
+                    </v-form>
+                  </validation-observer>
                 </div>
             <div v-if="showForm && componentName === 'StaffResourcing'" class="formCard">
-                  <form class="businessConsultingForm" > 
+              <validation-observer ref="observer" v-slot="{handleSubmit}"> 
+                <v-form class="tw-mt-6 businessConsultingForm" @submit.prevent="handleSubmit(staffResourcingSubmit)">
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="name"
+                          rules="required">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Name</h2>
-                                <v-text-field v-model="formData.name" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.name" solo ></v-text-field>
 
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="company's name"
+                          rules="required">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Company’s Name</h2>
-                                <v-text-field v-model="formData.companyName" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.companyName" solo ></v-text-field>
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="email"
+                          rules="required|email">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Email Address</h2>
-                                <v-text-field v-model="formData.email" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.email" solo ></v-text-field>
                             </div>
-
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="industry"
+                          rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Industry</h2>
                                 <v-select
-                                v-model="formData.industry" 
+                                v-model="staffResourcing.industry" 
                                 solo 
                                 :items="highestDegree"></v-select>
                             </div>
-                            
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="location"
+                          rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Location</h2>
-                                <v-text-field v-model="formData.location" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.location" solo ></v-text-field>
                             </div>
+                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="position"
+                          rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Positions Recruiting</h2>
-                                <v-text-field v-model="formData.position" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.position" solo ></v-text-field>
                             </div>
-                            
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                          <validation-provider
+                            v-slot="{ errors }"
+                            name="no of candidate"
+                            rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Number of Candidate</h2>
-                                <v-text-field v-model="formData.noOfCandidates" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.noOfCandidates" solo ></v-text-field>
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        
                             <div class="startEndDate d-flex align-items justify-space-between">
+                        <validation-provider
+                            v-slot="{ errors }"
+                            name="start date"
+                            rules="">
                               <div style="width: 100%;" class="d-flex field align-items justify-center">
                                 <h2 class="">Start Date</h2>
-                                <v-text-field v-model="formData.projectStartDate" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.staffResourceStartDate" solo ></v-text-field>
                             </div>
-
+                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+                        <validation-provider
+                            v-slot="{ errors }"
+                            name="end date"
+                            rules="">
                             <div style="width: 100%;" class="d-flex ml-2 field align-items justify-center">
                                 <h2 class="">End Date</h2>
-                                <v-text-field v-model="formData.projectEndDate" solo ></v-text-field>
+                                <v-text-field v-model="staffResourcing.staffResourceEndDate" solo ></v-text-field>
                             </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
 
                             </div>
                             
-                            <v-btn depressed block class="btn-hover mt-6" @click="submit()"> Submit</v-btn>
-                        </form>
+                            <v-btn depressed block class="btn-hover mt-6" type="submit"> Submit</v-btn>
+                    </v-form>
+                  </validation-observer>
                 </div>
           </div>
         </div>
@@ -149,23 +284,42 @@ export default {
     props:{
         title: String,
         bgColor: String,
-        componentName: String
+        componentName: String,
+        clearField: {
+            type: Boolean,
+            default: false
+        }
     },
     data(){
       return{
         showForm: false,
-        formData:{
-        name:"",
-        companyName:"",
-        email:"",
-        industry:"",
-        projectName:"",
-        projectBrief:"",
-        projectEndDate:"",
-        projectStartDate:"",
-        position:"",
-        bizImprovementNeeds:"",
-        noOfCandidates:"",
+        projectManagement:{
+            name:"",
+            companyName:"",
+            industry:"",
+            projectName:"",
+            projectBrief:"",
+            projectEndDate:"",
+            projectStartDate:"",
+        },
+        businessConsulting:{
+           name:"",
+          companyName:"",
+          email:"",
+          industry:"",
+          position:"",
+          bizImprovementNeeds:"",
+        },
+        staffResourcing:{
+          name:"",
+          companyName:"",
+          email:"",
+          industry:"",
+          location:"",
+          position:"",
+          noOfCandidates:"",
+          staffResourceStartDate:"",
+          staffResourceEndDate:""
         },
         highestDegree:[
                 'Secondary School','Bsc', 'Masters', 'College', 'Phd'
@@ -174,9 +328,52 @@ export default {
       }
     },
     methods:{
-      submit(){
-        console.log(this.formData)
-        this.showForm = false
+      projectManagementSubmit(){
+          this.$emit('project', this.projectManagement)
+              setTimeout(() => {
+                this.clearForm()
+                this.$refs.observer.reset()
+            },2000)  
+      },
+      businessConsultingSubmit(){
+         this.$emit('business', this.businessConsulting)
+              setTimeout(() => {
+                this.clearForm()
+                this.$refs.observer.reset()
+            },2000)
+      },
+      staffResourcingSubmit(){
+         this.$emit('staff', this.staffResourcing)
+              setTimeout(() => {
+                this.clearForm()
+                this.$refs.observer.reset()
+            },2000)
+      },
+      clearForm(){
+        this.projectManagement.name ="",
+        this.projectManagement.companyName ="",
+        this.projectManagement.industry = "",
+        this.projectManagement.projectName = "",
+        this.projectManagement.projectBrief = "",
+        this.projectManagement.projectEndDate = "",
+        this.projectManagement.projectStartDate = "",
+
+        this.businessConsulting.name ="",
+        this.businessConsulting.companyName ="",
+        this.businessConsulting.email = "",
+        this.businessConsulting.industry = "",
+        this.businessConsulting.position = "",
+        this.businessConsulting.bizImprovementNeeds = "",
+
+        this.staffResourcing.name ="",
+        this.staffResourcing.companyName ="",
+        this.staffResourcing.email = "",
+        this.staffResourcing.industry = "",
+        this.staffResourcing.location = "",
+        this.staffResourcing.position = "",
+        this.staffResourcing.noOfCandidates = "",
+        this.staffResourcing.staffResourceStartDate = "",
+        this.staffResourcing.staffResourceEndDate = ""
       }
     }
 
@@ -288,5 +485,17 @@ width: 100%;
             margin-bottom: 5px;
         }
     }
+}
+.err{
+    color: red;
+    font-size: 13px;
+    margin-left: 20%;
+    @media (max-width: 650px) {
+            margin-left: 0 !important;
+            margin-bottom: 10px;
+        }
+}
+.formCard ::v-deep .v-text-field.v-text-field--enclosed .v-text-field__details{
+    display: none;
 }
 </style>

@@ -10,7 +10,12 @@
       
     </div>
     <section-two/>
-    <engage-us component-name="BusinessConsulting" title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 255, 0.30)'"/>
+    <engage-us component-name="BusinessConsulting"
+     title="Engage Us for your Business Needs" 
+     :bg-color="'rgba(0, 0, 255, 0.30)'"
+     @business="submit($event)"
+     />
+      <snackbar :snackbar="openSnackBar" @closeSnackBar="openSnackBar = $event"/>
 
     <!-- <div class="vector">
          <img src="~/assets/vectorThree.svg">
@@ -22,9 +27,26 @@
 <script>
 import EngageUs from '../components/BusinessConsulting/EngageUs.vue'
 import sectionTwo from '../components/BusinessConsulting/sectionTwo.vue'
+import Snackbar from '../components/reusables/snackbar.vue'
 export default {
-  components: { sectionTwo, EngageUs },
-
+  components: { sectionTwo, EngageUs, Snackbar },
+  data(){
+    return{
+     openSnackBar: false
+    }
+  },
+  methods:{
+    submit(value){
+            try{
+                this.$fire.firestore.collection("business_consulting").
+                doc(value.email).set(value)
+                this.openSnackBar = true 
+            }
+            catch(err){
+                    console.log(err)
+            }
+    }
+  }
 }
 </script>
 

@@ -46,7 +46,8 @@
           <a class="link1" href="/staff-resourcing">Staff Resourcing</a>
           <a class="link1" href="/project-management">Project Management</a>
           <a class="link1" href="/apply">Apply for jobs</a>
-          <v-btn depressed class="btn-hover mt-4"> Contact Us</v-btn>
+         <contact-us/>
+        
         </nav>
     </nav>
 

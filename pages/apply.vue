@@ -9,57 +9,139 @@
             <h1 class="mb-n10">We are Recruiting for Our<br> Clients.</h1>
             <div class="formCard">
                 <h5 class="mb-6">If you’re up for the challenge, submit your application below.</h5>
-                <form>
-                    <div class="d-flex field align-items justify-center">
-                        <h3 class="mt-3">Position</h3>
-                        <v-select
-                        v-model="degree" 
-                        solo 
-                        :items="highestDegree"></v-select>
-                    </div>
-                    <div class="d-flex field align-items justify-center">
-                        <h3 class="mt-3">Candidate Name</h3>
-                        <v-text-field solo ></v-text-field>
-                    </div>
+              
+            <validation-observer ref="observer" v-slot="{handleSubmit}"> 
+                <v-form class="tw-mt-6" @submit.prevent="handleSubmit(submit)">
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="Position"
+                          rules="required">
+                            <div class="d-flex field align-items justify-center">
+                                <h3 class="mt-3">Position</h3>
+                                <v-text-field solo v-model="position"
+                                ></v-text-field>
+                            </div>
+                        <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                    </validation-provider>
+                    
+                    <validation-provider
+                          v-slot="{ errors }"
+                          name="Candidate name"
+                          rules="required">
+                        <div class="d-flex field align-items justify-center">
+                            <h3 class="mt-3">Candidate Name</h3>
+                            <v-text-field
+                            :error-messages="errorMessages"
+                            @input="errorMessages = ''"
+                            required solo v-model="candidate_name" ></v-text-field>
+                        </div>
+                        <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                    </validation-provider>
 
-                    <div class="d-flex field align-items justify-center">
-                        <h3 class="mt-3">Highest Degree</h3>
-                        <v-select
-                        v-model="degree" 
-                        solo 
-                        :items="highestDegree"></v-select>
-                    </div>
-                    <div class="d-flex field align-items justify-center">
-                        <h3 class="mt-3">Available from (Date)</h3>
-                        <v-text-field solo ></v-text-field>
-                    </div>
-                    <div class="d-flex field align-items justify-center">
+                    <validation-provider
+                          v-slot="{ errors }"
+                          name="Highest degree"
+                          rules="">
+                        <div class="d-flex field align-items justify-center">
+                            <h3 class="mt-3">Highest Degree</h3>
+                            <v-select
+                            v-model="degree" 
+                            solo 
+                            :items="highestDegree"></v-select>
+                        </div>
+                         <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                    </validation-provider>
+
+                    <validation-provider
+                          v-slot="{ errors }"
+                          name="date "
+                          rules="">
+                        <div class="d-flex field align-items justify-center">
+                            <h3 class="mt-3">Available from (Date)</h3>
+                            <v-text-field type="date" solo v-model="date" ></v-text-field>
+                        </div>
+                         <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                    </validation-provider>
+                    <!-- <div class="d-flex field align-items justify-center">
                         <h3 class="mt-3">Resume Upload</h3>
                         <v-textarea solo ></v-textarea>
-                    </div>
-                    <v-btn depressed block class="btn-hover"> Submit</v-btn>
-                </form>
+                    </div> -->
+                    <v-btn depressed block class="btn-hover mt-7" type="submit" > Submit</v-btn>
+                </v-form>
+            </validation-observer>
+               
             </div> 
         </div>
-
+        <snackbar :snackbar="openSnackBar" @closeSnackBar="closeSnackBar($event)"/>
         <!-- <div class="vector">
          <img src="~/assets/vectorThree.svg">
      </div> -->
+
+    
+          
   </section>
 </template>
 
 <script>
+import snackbar from '../components/reusables/snackbar.vue'
 export default {
-    created(){
-        console.log(this.$route.name)
-    },
+  components: { snackbar },
     data(){
         return{
+            openSnackBar: false,
+            position:"",
+            candidate_name:"",
+            date:"",
             degree:"",
             highestDegree:[
                 'Secondary School','Bsc', 'Masters', 'College', 'Phd'
-            ]
+            ],
+            errorMessages:"",
+            positionErrorMessages:""
+            
         }
+    },
+    methods:{
+        closeSnackBar( value){
+                this.openSnackBar = value
+        },
+        clearForm(){
+            this.position = "",
+            this.candidate_name = "",
+            this.degree = "",
+            this.date = "" 
+        },
+        submit(){
+            const userData = {
+                         position:this.position,
+                        candidate_name: this.candidate_name,
+                        date: this.date,
+                        degree: this.degree
+                    }
+           
+            try{
+                this.$fire.firestore.collection("apply_for_job").
+                doc().set( userData )
+                this.clearForm()
+                this.$refs.observer.reset()
+                this.openSnackBar = true
+            }
+            catch(err){
+                    console.log(err)
+            }
+        }
+
+        // saveToGoogleSheet () {
+        //     const scriptURL = 'https://script.google.com/macros/s/.../exec'
+        //     const form = ''
+        //     var sendingData = new FormData(form)
+        //     sendingData.append('starRating', this.feedbackData.starRating)
+
+        //     fetch(scriptURL, {method: 'POST', body: new FormData(sendingData)})
+        //         .then(response => console.log('Success!', response))
+        //         .catch(error => console.error('Error!', error.message))
+        //     }
+
     }
 
 }
@@ -172,5 +254,17 @@ export default {
     position: absolute;
     bottom: 0;
     left: -20%;
+}
+
+.err{
+    color: red;
+    font-size: 13px;
+    margin-left: 20%;
+    @media (max-width: 650px) {
+            margin-left: 0 !important;
+        }
+}
+.formCard ::v-deep .v-text-field.v-text-field--enclosed .v-text-field__details{
+    display: none;
 }
 </style>

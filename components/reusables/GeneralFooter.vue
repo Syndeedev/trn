@@ -22,12 +22,32 @@
             <contact-us class="mt-4"/>
           </div>
         </v-col>
-        <v-col cols="12" sm="12" md="6">
-          <div class="wrapper colTwo flex-column">
-          <h2>Sign up to newsletter</h2>
-          <v-text-field class="mt-8" solo placeholder="FIRST NAME"/>
-          <v-text-field solo placeholder="EMAIL ADDRESS"/>
-          <v-btn depressed class="btn-hover mt-4"> Subscribe</v-btn>
+        <v-col cols="12" sm="12" md="6" class="formCard">
+          <div class=" colTwo flex-column">
+          <h2 class="text-center">Sign up to newsletter</h2>
+          <validation-observer ref="observer" v-slot="{handleSubmit}"> 
+                <v-form class="tw-mt-6 " @submit.prevent="handleSubmit(submit)">
+                    <validation-provider
+                      v-slot="{ errors }"
+                      name="First name"
+                      rules="required">
+                        <v-text-field class="mt-8" solo placeholder="FIRST NAME" v-model="firstName"/>
+                        <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                    </validation-provider>
+
+                    <validation-provider
+                      v-slot="{ errors }"
+                      name="email"
+                      rules="required|email">
+                        <v-text-field class="mt-3" solo placeholder="EMAIL ADDRESS" v-model="email"/>
+                       <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                    </validation-provider>
+
+                      <div class="wrapper b mt-7">
+                        <v-btn type="submit" depressed class="btn-hover"> Subscribe</v-btn>
+                      </div>
+                </v-form>
+          </validation-observer>
           
           </div>
         </v-col>
@@ -39,14 +59,46 @@
           <a href="https://www.instagram.com/trn.consulting/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/instagram.png" alt="instagram"></a>
         </div>
       </div>
+
+       <snackbar :snackbar="openSnackBar" @closeSnackBar="openSnackBar = $event"/>
   </section>
 </template>
 
 <script>
 import contactUs from './contactUs.vue'
+import Snackbar from './snackbar.vue'
 export default {
-  components: { contactUs },
-name: "Footer",
+  name: "Footer",
+  components: { contactUs, Snackbar },
+  data(){
+    return{
+      openSnackBar:false,
+      firstName:"",
+      email:""
+
+    }
+  },
+  methods:{
+    submit(){
+      console.log(this.firstName, this.email)
+            try{
+                this.$fire.firestore.collection("subscribe_list").
+                doc(this.email).set(
+                  {
+                    firstName: this.firstName,
+                    email: this.email
+                  }
+                )
+                this.firstName = "", 
+                this.email =""
+                this.$refs.observer.reset()
+                this.openSnackBar = true 
+            }
+            catch(err){
+                    console.log(err)
+            }
+    }
+  }
 }
 </script>
 
@@ -79,5 +131,12 @@ h4{
 font-weight: 600;
 font-size: 16px;
 line-height: 20px;
+}
+.err{
+    color: red;
+    font-size: 13px;
+}
+.formCard ::v-deep .v-text-field.v-text-field--enclosed .v-text-field__details{
+    display: none;
 }
 </style>

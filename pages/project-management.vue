@@ -8,15 +8,39 @@
       </div>
     </div>
     <PMSectionTwo/>
-    <engage-us component-name="ProjectManagement" title="Engage Us for your Projects" :bg-color="'rgba(50, 210, 50, 0.5)'"/>
+    <engage-us component-name="ProjectManagement" 
+    title="Engage Us for your Projects" 
+    :bg-color="'rgba(50, 210, 50, 0.5)'"
+    @project="submit($event)" />
+
+     <snackbar :snackbar="openSnackBar" @closeSnackBar="openSnackBar = $event"/>
+
   </section>
 </template>
 
 <script>
 import EngageUs from '~/components/BusinessConsulting/EngageUs.vue'
 import PMSectionTwo from '~/components/ProjectManagement/PMSectionTwo.vue'
+import Snackbar from '../components/reusables/snackbar.vue'
 export default {
-  components: { EngageUs, PMSectionTwo },
+  components: { EngageUs, PMSectionTwo, Snackbar },
+  data(){
+    return{
+     openSnackBar: false
+    }
+  },
+  methods:{
+    submit(value){
+            try{
+                this.$fire.firestore.collection("project_management").
+                doc().set(value)
+                this.openSnackBar = true 
+            }
+            catch(err){
+                    console.log(err)
+            }
+    }
+  }
 
 }
 </script>

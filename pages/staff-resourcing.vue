@@ -9,17 +9,38 @@
       
     </div>
     <staff-resourcing-section-two/>
-    <engage-us component-name="StaffResourcing" title="Engage Us for your Business Needs" :bg-color="'rgba(0, 0, 0, 0.5)'"/>
-
+    <engage-us component-name="StaffResourcing" 
+    title="Engage Us for your Business Needs" 
+    :bg-color="'rgba(0, 0, 0, 0.5)'"
+    @staff="submit($event)"
+    />
+    <snackbar :snackbar="openSnackBar" @closeSnackBar="openSnackBar = $event"/>
   </section>
 </template>
 
 <script>
 import EngageUs from '../components/BusinessConsulting/EngageUs.vue'
+import Snackbar from '../components/reusables/snackbar.vue'
 import StaffResourcingSectionTwo from '../components/StaffResourcing/staffResourcingSectionTwo.vue'
 export default {
-  components: { EngageUs, StaffResourcingSectionTwo },
-
+  data(){
+    return{
+     openSnackBar: false
+    }
+  },
+  components: { EngageUs, StaffResourcingSectionTwo, Snackbar },
+  methods:{
+      submit(value){
+              try{
+                  this.$fire.firestore.collection("staff_resourcing").
+                  doc(value.email).set(value)
+                  this.openSnackBar = true 
+              }
+              catch(err){
+                      console.log(err)
+              }
+      }
+    }
 }
 </script>
 

@@ -36,6 +36,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "~/plugins/vee-validate.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,6 +49,25 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+
+        config: {
+          apiKey: "AIzaSyAFzUBpT8SxFgoYr7_nlPOfu9U-j728vcQ",
+          authDomain: "trn-consulting.firebaseapp.com",
+          projectId: "trn-consulting",
+          storageBucket: "trn-consulting.appspot.com",
+          messagingSenderId: "617723921744",
+          appId: "1:617723921744:web:08032501c948554ea81855"
+        },
+        services: {
+          // auth: true, 
+          firestore: true,
+          database: true,
+        }
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
