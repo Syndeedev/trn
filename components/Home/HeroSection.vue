@@ -11,7 +11,7 @@
         </h4>
          </div>
          <div class="mt-8">
-         <v-btn depressed class="btn-hover white--text"> Learn more</v-btn>
+         <v-btn to="/about" depressed class="btn-hover white--text"> Learn more</v-btn>
          </div>
       </div>
       
