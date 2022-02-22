@@ -111,7 +111,6 @@ data () {
     },
     methods:{
         submit(){
-            console.log(this.formData)
              try{
                 this.$fire.firestore.collection("contact_us").
                 doc(this.formData.email).set(this.formData)
