@@ -147,6 +147,10 @@ export default {
   color: #000000 !important;
   margin: 6px 0;
   text-decoration: none;
+  font-size: 14px;
+}
+.dropdown-menu a:hover{
+  color: #32D232 !important;
 }
 .nav{
   max-width:1440px; 
