@@ -52,9 +52,9 @@
           </div>
         </v-col>
       </v-row>
-        <div class="wrapper mt-16">
-          <a href="" target="_blank"><img class="mx-4" src="~/assets/socialIcons/facebook.svg" alt="facebook"></a>
-          <a target="_blank" href=" https://twitter.com/trnconsulting"><img class="mx-4" src="~/assets/socialIcons/twitter.svg" alt="twitter"></a>
+        <div class="wrapper footer-links mt-16">
+          <a href=""  target="_blank"><img class="mx-4" src="~/assets/socialIcons/facebook.png" alt="facebook"></a>
+          <a target="_blank" href=" https://twitter.com/trnconsulting"><img class="mx-4" src="~/assets/socialIcons/twitter.png" alt="twitter"></a>
           <a target="_blank" href="https://www.linkedin.com/company/trnconsultingservices/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/linkedin.png" alt="linkedin"></a>
           <a target="_blank" href="https://www.instagram.com/trn.consulting/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/instagram.png" alt="instagram"></a>
         </div>
@@ -138,5 +138,11 @@ line-height: 20px;
 }
 .formCard ::v-deep .v-text-field.v-text-field--enclosed .v-text-field__details{
     display: none;
+}
+.footer-links{
+  img{
+    width: 37px;
+    height: 37px;
+  }
 }
 </style>
