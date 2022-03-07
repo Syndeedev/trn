@@ -35,18 +35,26 @@
             <!-- </div> -->
         </div>
 
-        <div style="margin-top:120px" class="wrapper mb-16">
-            <h2>Our Business Consulting Services are structured to address a company’s 
-                end-to-end business needs. We provide comprehensive services to support your 
-                business by leveraging strategy to drive people, process, information and 
-                technology considerations.<br><br>
+       
 
-                We provide a wide range of services to individuals and businesses in 
-                a variety of industries. Our firm strives to meet each client's specific 
-                needs in planning for the future and achieving their goals in an ever-changing 
-                financial and regulatory environment. <br><br>
+        <div class="cardDivTwo d-flex my-16">
+            <h3 >
+            Our Business Consulting Services are structured to address a company’s 
+                    end-to-end business needs. We provide comprehensive services to support your 
+                    business by leveraging strategy to drive people, process, information and 
+                    technology considerations.<br><br>
 
-                Being one of the most trusted consulting firms in Nigeria, we provide customized 
+                    We provide a wide range of services to individuals and businesses in 
+                    a variety of industries. Our firm strives to meet each client's specific 
+                    needs in planning for the future and achieving their goals in an ever-changing 
+                    financial and regulatory environment.
+            </h3>
+        
+            <img src="~/assets/bImageOne.jpg">
+      </div>
+        <div class="cardDivTwo d-flex">
+            <h3 >
+           Being one of the most trusted consulting firms in Nigeria, we provide customized 
                 solutions and services to help businesses across industries and geographies to be 
                 successful. We focus on delivering actionable and timely results to solve our
                  clients’ core issues and to enable them to grow and lead. From market entry
@@ -54,8 +62,10 @@
                    understand markets, expand operations, start-up new businesses and compete 
                    more effectively.
 
-</h2>
-        </div>
+            </h3>
+        
+            <img src="~/assets/bImageTwo.jpg">
+      </div>
     </div>
     
 </section>
@@ -230,4 +240,38 @@ h2{
         }
     }
 
+.cardDivTwo{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 60px;
+    align-items: center;
+        justify-content: center;
+    h3{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+        // max-width: 570px;
+        margin-right:50px;
+        color: rgba(0, 0, 0, 0.8);
+        
+            }
+    @media (max-width: 1023px) {
+        flex-wrap: wrap;
+        padding: 60px 16px;
+        h3{
+            margin-bottom: 50px;
+            margin-right:0;
+        }
+        
+    }
+    img{
+        max-width: 347px;
+        // max-height: 257px;
+        width: 100%;
+    }
+}
 </style>
