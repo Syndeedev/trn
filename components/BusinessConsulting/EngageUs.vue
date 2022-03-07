@@ -105,7 +105,7 @@
                                   v-slot="{ errors }"
                                   name="end date"
                                   rules="">
-                                  <div style="width: 100%;" class="d-flex ml-2 field align-items justify-center">
+                                  <div style="width: 100%;" class="d-flex projectenddate ml-2 field align-items justify-center">
                                       <h2 class=""> Project End Date</h2>
                                       <v-text-field type="date" v-model="projectManagement.projectEndDate" solo ></v-text-field>
                                   </div>
@@ -468,6 +468,11 @@ export default {
     margin-right: 2px !important ;
     margin-top: 7px;
   }
+  }
+}
+.projectenddate{
+   @media (max-width: 1110px) {
+    margin-left: 0px !important;
   }
 }
 .mainDiv{
