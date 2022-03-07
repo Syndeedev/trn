@@ -15,8 +15,8 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel:"preconnect", href:"https://fonts.googleapis.com"},
-      {href:"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap", rel:"stylesheet"}
-   
+      {href:"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap", rel:"stylesheet"},
+      {href:"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", rel:"stylesheet"}
     ],
     script:[
         {
@@ -54,12 +54,20 @@ export default {
       {
 
         config: {
-          apiKey: "AIzaSyAFzUBpT8SxFgoYr7_nlPOfu9U-j728vcQ",
-          authDomain: "trn-consulting.firebaseapp.com",
-          projectId: "trn-consulting",
-          storageBucket: "trn-consulting.appspot.com",
-          messagingSenderId: "617723921744",
-          appId: "1:617723921744:web:08032501c948554ea81855"
+          // apiKey: "AIzaSyAFzUBpT8SxFgoYr7_nlPOfu9U-j728vcQ",
+          // authDomain: "trn-consulting.firebaseapp.com",
+          // projectId: "trn-consulting",
+          // storageBucket: "trn-consulting.appspot.com",
+          // messagingSenderId: "617723921744",
+          // appId: "1:617723921744:web:08032501c948554ea81855"
+
+          apiKey: "AIzaSyDGlS9FhTBXaqdNWQvh0UG73cLiFP4IxbE",
+          authDomain: "trn-consulting-9c46f.firebaseapp.com",
+          projectId: "trn-consulting-9c46f",
+          storageBucket: "trn-consulting-9c46f.appspot.com",
+          messagingSenderId: "401647845896",
+          appId: "1:401647845896:web:59dcd83758c365682c07bd",
+          // measurementId: "G-G2YC4QQ1JV"
         },
         services: {
           // auth: true, 

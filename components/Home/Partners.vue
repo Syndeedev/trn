@@ -5,12 +5,12 @@
      <div class="card pa-16 " style="max-width:1440px">
          <h2 class="mb-12">Our Partners</h2>
             <div class="imagesCard d-flex justify-space-around flex-wrap align-items">
-                <div class="image">
+                <!-- <div class="image">
                 <img width="150" height="100" src="~/assets/TrnPartnerImages/Amazon-Logo.png">
-                </div>
-                <div class="image">
+                </div> -->
+                <!-- <div class="image">
                 <img width="170" height="100" src="~/assets/TrnPartnerImages/Microsoft_Logo.png">
-                </div>
+                </div> -->
                 <div class="image">
                 <img width="150" height="90" src="~/assets/TrnPartnerImages/eyeconic.jpeg">
                 </div>
@@ -20,13 +20,14 @@
                 <div class="image">
                 <img width="150" height="110" src="~/assets/TrnPartnerImages/dynastees.jpeg">
                 </div>
+                <div class="image">
+                <img width="120" height="120" src="~/assets/TrnPartnerImages/yellow-blue.png">
+                </div>
             </div>
 
 
             <div class="imagesCard d-flex justify-space-around flex-wrap tw-items-center">
-            <div class="image">
-                <img width="120" height="120" src="~/assets/TrnPartnerImages/yellow-blue.png">
-                </div>
+                
                 <div class="image">
                 <img width="200" height="110" src="~/assets/TrnPartnerImages/whoosh.jpeg">
                 </div>

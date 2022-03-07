@@ -30,6 +30,18 @@
                                 </div>
                                 <span v-show="errors" class="err ">{{ errors[0] }} </span>
                             </validation-provider>
+
+                            <validation-provider
+                          v-slot="{ errors }"
+                          name="position"
+                          rules="numeric">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Phone number</h2>
+                                <v-text-field v-model="projectManagement.phoneNumber" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+
                         <validation-provider
                             v-slot="{ errors }"
                             name="industry"
@@ -39,7 +51,7 @@
                                 <v-select
                                 v-model="projectManagement.industry" 
                                 solo 
-                                :items="highestDegree"></v-select>
+                                :items="industries"></v-select>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
@@ -55,18 +67,7 @@
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
                         
-                         <validation-provider
-                            v-slot="{ errors }"
-                            name="project_brief"
-                            rules="">
-                            <div class="d-flex field align-items justify-center">
-                                <h2 class="mt-2">Project Brief</h2>
-                                <v-text-field v-model="projectManagement.projectBrief" solo ></v-text-field>
-                            </div>
-                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
-                        </validation-provider>
-                        
-                        <validation-provider
+                        <!-- <validation-provider
                             v-slot="{ errors }"
                             name="project start date"
                             rules="">
@@ -75,15 +76,51 @@
                                 <v-text-field type="date" v-model="projectManagement.projectStartDate" solo ></v-text-field>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
-                        </validation-provider>
+                        </validation-provider> -->
                         
-                         <validation-provider
+                         <!-- <validation-provider
                             v-slot="{ errors }"
                             name="project end date"
                             rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Project End Date</h2>
                                 <v-text-field type="date" v-model="projectManagement.projectEndDate" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider> -->
+
+
+                        <div class="startEndDate d-flex align-items justify-space-between">
+                              <validation-provider style="width:100%"
+                                  v-slot="{ errors }"
+                                  name="start date"
+                                  rules="">
+                                    <div style="width: 100%;" class="d-flex field align-items justify-center">
+                                      <h2 class="">Project Start Date</h2>
+                                      <v-text-field type="date" v-model="projectManagement.projectStartDate" solo ></v-text-field>
+                                  </div>
+                                  <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                              </validation-provider>
+                              <validation-provider style="width:100%"
+                                  v-slot="{ errors }"
+                                  name="end date"
+                                  rules="">
+                                  <div style="width: 100%;" class="d-flex ml-2 field align-items justify-center">
+                                      <h2 class=""> Project End Date</h2>
+                                      <v-text-field type="date" v-model="projectManagement.projectEndDate" solo ></v-text-field>
+                                  </div>
+                                  <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                              </validation-provider>
+
+                            </div>
+
+                        <validation-provider
+                            v-slot="{ errors }"
+                            name="project_brief"
+                            rules="">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Project Brief</h2>
+                                <v-textarea v-model="projectManagement.projectBrief" solo ></v-textarea>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
@@ -118,6 +155,19 @@
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
+
+
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="position"
+                          rules="numeric">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Phone number</h2>
+                                <v-text-field v-model="businessConsulting.phoneNumber" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+
                         <validation-provider
                           v-slot="{ errors }"
                           name="email"
@@ -137,11 +187,12 @@
                                 <v-select
                                 v-model="businessConsulting.industry" 
                                 solo 
-                                :items="highestDegree"></v-select>
+                                :items="industries"></v-select>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
-                        <validation-provider
+
+                        <!-- <validation-provider
                           v-slot="{ errors }"
                           name="position"
                           rules="">
@@ -150,7 +201,8 @@
                                 <v-text-field v-model="businessConsulting.position" solo ></v-text-field>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
-                        </validation-provider>
+                        </validation-provider> -->
+
                         <validation-provider
                           v-slot="{ errors }"
                           name="position"
@@ -200,6 +252,18 @@
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
+
+                        <validation-provider
+                          v-slot="{ errors }"
+                          name="position"
+                          rules="numeric">
+                            <div class="d-flex field align-items justify-center">
+                                <h2 class="mt-2">Phone number</h2>
+                                <v-text-field v-model="staffResourcing.phoneNumber" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
+
                         <validation-provider
                           v-slot="{ errors }"
                           name="industry"
@@ -209,7 +273,7 @@
                                 <v-select
                                 v-model="staffResourcing.industry" 
                                 solo 
-                                :items="highestDegree"></v-select>
+                                :items="industries"></v-select>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
@@ -228,7 +292,7 @@
                           name="position"
                           rules="">
                             <div class="d-flex field align-items justify-center">
-                                <h2 class="mt-2">Positions Recruiting</h2>
+                                <h2 class="mt-2">Position(s) Recruiting</h2>
                                 <v-text-field v-model="staffResourcing.position" solo ></v-text-field>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
@@ -236,7 +300,7 @@
                           <validation-provider
                             v-slot="{ errors }"
                             name="no of candidate"
-                            rules="">
+                            rules="numeric">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Number of Candidate</h2>
                                 <v-text-field v-model="staffResourcing.noOfCandidates" solo ></v-text-field>
@@ -244,29 +308,7 @@
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
                         </validation-provider>
                         
-                            <div class="startEndDate d-flex align-items justify-space-between">
-                        <validation-provider
-                            v-slot="{ errors }"
-                            name="start date"
-                            rules="">
-                              <div style="width: 100%;" class="d-flex field align-items justify-center">
-                                <h2 class="">Start Date</h2>
-                                <v-text-field v-model="staffResourcing.staffResourceStartDate" solo ></v-text-field>
-                            </div>
-                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
-                        </validation-provider>
-                        <validation-provider
-                            v-slot="{ errors }"
-                            name="end date"
-                            rules="">
-                            <div style="width: 100%;" class="d-flex ml-2 field align-items justify-center">
-                                <h2 class="">End Date</h2>
-                                <v-text-field v-model="staffResourcing.staffResourceEndDate" solo ></v-text-field>
-                            </div>
-                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
-                        </validation-provider>
-
-                            </div>
+                            
                             
                             <v-btn depressed block class="btn-hover mt-6" type="submit"> Submit</v-btn>
                     </v-form>
@@ -296,6 +338,7 @@ export default {
         projectManagement:{
             name:"",
             companyName:"",
+            phoneNumber:"",
             industry:"",
             projectName:"",
             projectBrief:"",
@@ -307,13 +350,14 @@ export default {
           companyName:"",
           email:"",
           industry:"",
-          position:"",
+          phoneNumber:"",
           bizImprovementNeeds:"",
         },
         staffResourcing:{
           name:"",
           companyName:"",
           email:"",
+          phoneNumber:"",
           industry:"",
           location:"",
           position:"",
@@ -321,8 +365,9 @@ export default {
           staffResourceStartDate:"",
           staffResourceEndDate:""
         },
-        highestDegree:[
-                'Secondary School','Bsc', 'Masters', 'College', 'Phd'
+        industries:[
+          'ICT', 'Banking', 'Agriculture', 'Real Estate', 'Consumer Goods', 'Healthcare', 'Oil & Gas', 'Entertainment', 'Hospitality', 'Utilities'
+                
             ]
         
       }
@@ -354,12 +399,14 @@ export default {
         this.projectManagement.companyName ="",
         this.projectManagement.industry = "",
         this.projectManagement.projectName = "",
+        this.projectManagement.phoneNumber = "",
         this.projectManagement.projectBrief = "",
         this.projectManagement.projectEndDate = "",
         this.projectManagement.projectStartDate = "",
 
         this.businessConsulting.name ="",
         this.businessConsulting.companyName ="",
+        this.businessConsulting.phoneNumber ="",
         this.businessConsulting.email = "",
         this.businessConsulting.industry = "",
         this.businessConsulting.position = "",
@@ -367,6 +414,7 @@ export default {
 
         this.staffResourcing.name ="",
         this.staffResourcing.companyName ="",
+        this.staffResourcing.phoneNumber ="",
         this.staffResourcing.email = "",
         this.staffResourcing.industry = "",
         this.staffResourcing.location = "",
@@ -411,9 +459,15 @@ export default {
      }
 }
 .startEndDate{
-  @media (max-width: 500px) {
+  @media (max-width: 1110px) {
     flex-wrap: wrap;
     width: 100%;
+  }
+  h2{
+    @media (min-width: 1110px) {
+    margin-right: 2px !important ;
+    margin-top: 7px;
+  }
   }
 }
 .mainDiv{
@@ -423,7 +477,7 @@ export default {
      position: relative;
      @media (max-width: 700px) {
         width:95%;
-       }
+      }
 }
 .layer {
     flex-direction: column;

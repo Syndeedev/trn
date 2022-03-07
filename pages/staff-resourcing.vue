@@ -10,7 +10,7 @@
     </div>
     <staff-resourcing-section-two/>
     <engage-us component-name="StaffResourcing" 
-    title="Engage Us for your Business Needs" 
+    title="Engage us for Staff Resourcing" 
     :bg-color="'rgba(0, 0, 0, 0.5)'"
     @staff="submit($event)"
     />

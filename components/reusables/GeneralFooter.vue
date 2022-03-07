@@ -6,15 +6,15 @@
           <h2 class="text-center">Let’s Get in Touch</h2>
             <div class="d-flex mb-2 mt-8 align-items">
               <img src="~/assets/map-pin.svg">
-              <h4 class="ml-5"> 99, Obafemi Awolowo Way, Ikeja, Lagos, Nigeria</h4>
+              <h4 class="ml-5 my-auto"> 99, Obafemi Awolowo Way, Ikeja, Lagos, Nigeria</h4>
             </div>
-            <div class="d-flex mb-2 align-items">
+            <div class="d-flex mb-2  align-items">
               <img src="~/assets/mail.svg">
-              <h4 class="ml-5">hello@trnconsulting.com</h4>
+              <h4 class="ml-5 my-auto">hello@trn.com.ng</h4>
             </div>
             <div class="d-flex mb-2 align-items">
               <img src="~/assets/phone.svg">
-              <h4 class="ml-5">+234 812 756 4770</h4>
+              <h4 class="ml-5 my-auto">+234 812 756 4770</h4>
             </div>
           
           <div class="wrapper">
@@ -53,10 +53,10 @@
         </v-col>
       </v-row>
         <div class="wrapper mt-16">
-          <a href=""><img class="mx-4" src="~/assets/socialIcons/facebook.svg" alt="facebook"></a>
-          <a href=" https://twitter.com/trnconsulting"><img class="mx-4" src="~/assets/socialIcons/twitter.svg" alt="twitter"></a>
-          <a href="https://www.linkedin.com/company/trnconsultingservices/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/linkedin.png" alt="linkedin"></a>
-          <a href="https://www.instagram.com/trn.consulting/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/instagram.png" alt="instagram"></a>
+          <a href="" target="_blank"><img class="mx-4" src="~/assets/socialIcons/facebook.svg" alt="facebook"></a>
+          <a target="_blank" href=" https://twitter.com/trnconsulting"><img class="mx-4" src="~/assets/socialIcons/twitter.svg" alt="twitter"></a>
+          <a target="_blank" href="https://www.linkedin.com/company/trnconsultingservices/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/linkedin.png" alt="linkedin"></a>
+          <a target="_blank" href="https://www.instagram.com/trn.consulting/"><img class="mx-4" width="37" height="38" src="~/assets/socialIcons/instagram.png" alt="instagram"></a>
         </div>
       </div>
 

@@ -3,7 +3,8 @@
   <v-app-bar flat elevate-on-scroll fixed :style="{backgroundColor: bg}" height="auto">
     <div class="nav sectionSpacing">
       <div class="image" @click="routeTo('/')">
-      <img width="60" src="~/assets/trn_logo.png" alt="trn logo">
+      <img width="60" src="~/assets/trn_logoo.png" alt="trn logo">
+      <!-- <img width="60" src="~/assets/trn_logo.png" alt="trn logo"> -->
       </div>
        
       <div class="web" >

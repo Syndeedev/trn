@@ -18,9 +18,12 @@
                           rules="required">
                             <div class="d-flex field align-items justify-center">
                                 <h3 class="mt-3">Position</h3>
-                                <v-text-field solo v-model="position"
-                                ></v-text-field>
+                               <v-combobox
+                                    v-model="position" 
+                                    solo 
+                                    :items="positions"></v-combobox>
                             </div>
+                           
                         <span v-show="errors" class="err ">{{ errors[0] }} </span>
                     </validation-provider>
                     
@@ -37,6 +40,16 @@
                         </div>
                         <span v-show="errors" class="err ">{{ errors[0] }} </span>
                     </validation-provider>
+                    <validation-provider
+                          v-slot="{ errors }"
+                          name="phone number"
+                          rules="required|numeric">
+                            <div class="d-flex field align-items justify-center">
+                                <h3 class="mt-2">Phone Number</h3>
+                                <v-text-field v-model="phoneNumber" solo ></v-text-field>
+                            </div>
+                            <span v-show="errors" class="err ">{{ errors[0] }} </span>
+                        </validation-provider>
 
                     <validation-provider
                           v-slot="{ errors }"
@@ -89,12 +102,29 @@ export default {
     data(){
         return{
             openSnackBar: false,
-            position:"",
+            positions:[
+                "Business Developer", 
+                "Customer Service Representative", 
+                "Accountant, Sales Agent, Marketer", 
+                "Frontend Engineer", 
+                "Backend Engineer", 
+                "Product Designer", 
+                "Graphic Designer", 
+                "Web Developer", 
+                "Data Analyst", 
+                "Devops Engineer", 
+                "Business Analyst", 
+                "Project Manager", 
+                "Others"
+
+            ],
             candidate_name:"",
             date:"",
             degree:"",
+            position:"",
+            phoneNumber:"",
             highestDegree:[
-                'Secondary School','Bsc', 'Masters', 'College', 'Phd'
+                "High School Cert", "Bachelor's Degree", "Master’s Degree", "Doctorate"
             ],
             errorMessages:"",
             positionErrorMessages:""
@@ -109,14 +139,16 @@ export default {
             this.position = "",
             this.candidate_name = "",
             this.degree = "",
-            this.date = "" 
+            this.date = "",
+            this.phoneNumber = ""
         },
         submit(){
             const userData = {
                          position:this.position,
                         candidate_name: this.candidate_name,
                         date: this.date,
-                        degree: this.degree
+                        degree: this.degree,
+                        phone_number: this.phoneNumber
                     }
            
             try{

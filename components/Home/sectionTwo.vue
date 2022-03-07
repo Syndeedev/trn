@@ -13,12 +13,13 @@
           <div class="back">
               <div class="inner">  
                    <h1>Strategy</h1>                 
-                <h4>We want to help develop solid strategies that have been
-                     validated and tested for accuracy. Our strategy would help make good of 
-                     your investment decisions, like how and where you should spend your money. 
-                     We would provide guidance on project prioritization and other activities 
-                     within your organization. Allocating and optimizing resources, and helping 
-                     you achieve profits and business growth.</h4><br>
+                <h4>
+                    We want to help develop solid strategies that have been validated
+                     and tested for accuracy. Our strategy would help make good 
+                     of your investment decision. We would provide guidance on 
+                     project prioritization, allocating and optimizing resources, 
+                     and helping you achieve profits and business growth.
+                       </h4><br>
                 
               </div>
           </div>
@@ -35,13 +36,11 @@
           <div class="back_card_two">
             <div class="inner">
                  <h1>People</h1>
-                <h4> Successful businesses focus on people. Prioritizing employee development 
-                    ensures that team members’ skills continue to evolve in accordance with 
-                    industry trends and best practices. We help to make  
-                    learning and development a focus of your company culture, 
-                    improve employee engagement, increase retention and attract 
-                    elite candidates. We know strategy needs people to drive its 
-                    implementation and that's why we focus on people.</h4><br>
+                <h4>  Successful businesses focus on people. We know strategy needs people to drive
+                     its implementation and that's why we focus on people.
+                    We help to make  learning and development a focus of your company culture,
+                    improve employee engagement, increase retention and attract elite candidates.
+                    </h4><br>
                 
             </div>
           </div>
@@ -57,11 +56,12 @@
           <div class="back_card_three">
             <div class="inner">
                  <h1>Technology</h1>
-                <h4>Technology solutions allow businesses to remain agile and quick to 
-                    respond to change within the markets. Integration of various tech leads 
-                    to increased collaboration among teams leading to better product 
-                    development. With faster product launches, better quality innovations, 
-                    and improved product features, we will drive your business growth exponentially.
+                <h4>
+                     Technology solutions allow businesses to remain agile and quick to 
+                     respond to changes within the market. With faster product launches, 
+                     better quality innovations, and improved product features, 
+                     we will drive your business growth exponentially.
+
                     </h4><br>
                 
             </div>
