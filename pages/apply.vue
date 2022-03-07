@@ -17,7 +17,7 @@
                           name="Position"
                           rules="required">
                             <div class="d-flex field align-items justify-center">
-                                <h3 class="mt-3">Position</h3>
+                                <h3 class="mt-3 fieldtext">Position<span>*</span></h3>
                                <v-combobox
                                     v-model="position" 
                                     solo 
@@ -32,7 +32,7 @@
                           name="Candidate name"
                           rules="required">
                         <div class="d-flex field align-items justify-center">
-                            <h3 class="mt-3">Candidate Name</h3>
+                            <h3 class="mt-3 fieldtext">Candidate Name<span>*</span></h3>
                             <v-text-field
                             :error-messages="errorMessages"
                             @input="errorMessages = ''"
@@ -43,7 +43,7 @@
                     <validation-provider
                           v-slot="{ errors }"
                           name="phone number"
-                          rules="required|numeric">
+                          rules="numeric">
                             <div class="d-flex field align-items justify-center">
                                 <h3 class="mt-2">Phone Number</h3>
                                 <v-text-field v-model="phoneNumber" solo ></v-text-field>
@@ -54,9 +54,9 @@
                     <validation-provider
                           v-slot="{ errors }"
                           name="Highest degree"
-                          rules="">
+                          rules="required">
                         <div class="d-flex field align-items justify-center">
-                            <h3 class="mt-3">Highest Degree</h3>
+                            <h3 class="mt-3 fieldtext">Highest Degree<span>*</span></h3>
                             <v-select
                             v-model="degree" 
                             solo 
@@ -67,10 +67,10 @@
 
                     <validation-provider
                           v-slot="{ errors }"
-                          name="date "
-                          rules="">
+                          name="Date "
+                          rules="required">
                         <div class="d-flex field align-items justify-center">
-                            <h3 class="mt-3">Available from (Date)</h3>
+                            <h3 class="mt-3 fieldtext">Available from (Date)<span>*</span></h3>
                             <v-text-field type="date" solo v-model="date" ></v-text-field>
                         </div>
                          <span v-show="errors" class="err ">{{ errors[0] }} </span>
@@ -298,5 +298,8 @@ export default {
 }
 .formCard ::v-deep .v-text-field.v-text-field--enclosed .v-text-field__details{
     display: none;
+}
+.fieldtext span{
+color: #e95d5d;
 }
 </style>

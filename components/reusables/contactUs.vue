@@ -18,7 +18,7 @@
                         name="name"
                         rules="required">
                             <div class="d-flex field align-items justify-center">
-                                <h2 class="mt-2">Name</h2>
+                                <h2 class="mt-2 fieldtext">Name<span>*</span></h2>
                                 <v-text-field v-model="formData.name" solo ></v-text-field>
 
                             </div>
@@ -28,7 +28,7 @@
                         <validation-provider
                           v-slot="{ errors }"
                           name="company's name"
-                          rules="required">
+                          rules="">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Company’s Name</h2>
                                 <v-text-field v-model="formData.companyName" solo ></v-text-field>
@@ -41,7 +41,7 @@
                           name="email"
                           rules="required|email">
                             <div class="d-flex field align-items justify-center">
-                                <h2 class="mt-2">Email Address</h2>
+                                <h2 class="mt-2 fieldtext">Email Address<span>*</span></h2>
                                 <v-text-field v-model="formData.email" solo ></v-text-field>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
@@ -50,7 +50,7 @@
                         <validation-provider
                           v-slot="{ errors }"
                           name="phone number"
-                          rules="required|numeric">
+                          rules="numeric">
                             <div class="d-flex field align-items justify-center">
                                 <h2 class="mt-2">Phone Number</h2>
                                 <v-text-field v-model="formData.phoneNumber" solo ></v-text-field>
@@ -61,9 +61,9 @@
                         <validation-provider
                           v-slot="{ errors }"
                           name="subject"
-                          rules="">
+                          rules="required">
                             <div class="d-flex field align-items justify-center">
-                                <h2 class="mt-2">Subject </h2>
+                                <h2 class="mt-2 fieldtext">Subject<span>*</span> </h2>
                                 <v-text-field v-model="formData.subject " solo ></v-text-field>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
@@ -72,9 +72,9 @@
                         <validation-provider
                           v-slot="{ errors }"
                           name="message"
-                          rules="">
+                          rules="required">
                             <div class="d-flex flex-column field align-items justify-center">
-                                <h2 class="my-3">Message</h2>
+                                <h2 class="my-3 fieldtext">Message<span>*</span></h2>
                                 <v-textarea v-model="formData.message" solo ></v-textarea>
                             </div>
                             <span v-show="errors" class="err ">{{ errors[0] }} </span>
@@ -184,5 +184,8 @@ data () {
 }
 .formCard ::v-deep .v-text-field.v-text-field--enclosed .v-text-field__details{
     display: none;
+}
+.fieldtext span{
+color: #e95d5d;
 }
 </style>
